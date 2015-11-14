@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/G:/android/Telegram/violetetelegram/TMessagesProj/src/main/res/values-v14/bools.xml -->
+    <eat-comment/>
+    <bool name="useHardwareAcceleration">false</bool>
+</resources>

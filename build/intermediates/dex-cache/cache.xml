@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\Kharmagas\.gradle\caches\modules-2\files-2.1\com.googlecode.mp4parser\isoparser\1.0.6\2f9b0233a54d1fcbf84867b0e2518842cb0cd965\isoparser-1.0.6.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="2f9b0233a54d1fcbf84867b0e2518842cb0cd965">
+        <dex dex="G:\android\Telegram\violetetelegram\TMessagesProj\build\intermediates\pre-dexed\debug\isoparser-1.0.6-78881e39bf901d4d039746bd6ec5dd8c35ebf82f.jar" />
+    </item>
+    <item
+        jar="C:\Users\Kharmagas\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.1.0\support-annotations-23.1.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="92e3fc113ec3ee36b64603a38857b95700025633">
+        <dex dex="G:\android\Telegram\violetetelegram\TMessagesProj\build\intermediates\pre-dexed\debug\support-annotations-23.1.0-bd11bfe23539c8d537db73a37ed7467b9a166a9d.jar" />
+    </item>
+    <item
+        jar="C:\Users\Kharmagas\.gradle\caches\modules-2\files-2.1\org.apache.httpcomponents\httpmime\4.2.1\7c772bace9aa31a728c39a88c6ff66a7cd177e89\httpmime-4.2.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="7c772bace9aa31a728c39a88c6ff66a7cd177e89">
+        <dex dex="G:\android\Telegram\violetetelegram\TMessagesProj\build\intermediates\pre-dexed\debug\httpmime-4.2.1-47924e3f489584da9039c57f780b461bba922946.jar" />
+    </item>
+    <item
+        jar="G:\android\Telegram\Telegram\TMessagesProj\libs\adad-2.9.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="5c94c9e323d863a773204b89f88ab1e4ba31fd67">
+        <dex dex="G:\android\Telegram\Telegram\TMessagesProj\build\intermediates\pre-dexed\debug\adad-2.9-1598159127a24fb2effd5be135c40a4ccc1e5417.jar" />
+    </item>
+    <item
+        jar="G:\android\Telegram\violetetelegram\TMessagesProj\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.0\jars\libs\internal_impl-23.1.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="8716243bf04bae8d6c9ca94d27b9a9be7236f0a3">
+        <dex dex="G:\android\Telegram\violetetelegram\TMessagesProj\build\intermediates\pre-dexed\debug\internal_impl-23.1.0-b70cfd35e1032be3d5d8edd7e5822fc27286536f.jar" />
+    </item>
+    <item
+        jar="C:\Users\Kharmagas\.gradle\caches\modules-2\files-2.1\org.aspectj\aspectjrt\1.8.2\7dede91c0c36b1265fc99c55283b90ed2be144c8\aspectjrt-1.8.2.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="7dede91c0c36b1265fc99c55283b90ed2be144c8">
+        <dex dex="G:\android\Telegram\violetetelegram\TMessagesProj\build\intermediates\pre-dexed\debug\aspectjrt-1.8.2-1f28a67503f0116c218df936fd7dba78a6d21f1d.jar" />
+    </item>
+    <item
+        jar="G:\android\Telegram\violetetelegram\TMessagesProj\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="ddde541c289c8b816a8f8fd6c325d80788c522a6">
+        <dex dex="G:\android\Telegram\violetetelegram\TMessagesProj\build\intermediates\pre-dexed\debug\classes-e2cc85c69110d7319c57eaf83c1dffbd27229648.jar" />
+    </item>
+    <item
+        jar="G:\android\Telegram\violetetelegram\TMessagesProj\build\intermediates\exploded-aar\com.google.android.gms\play-services\3.2.65\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="23023656ba91dc12e963cf7d5682db5d2aba6262">
+        <dex dex="G:\android\Telegram\violetetelegram\TMessagesProj\build\intermediates\pre-dexed\debug\classes-06372fcf431b9f49607ff64c0f19deb7828c493d.jar" />
+    </item>
+    <item
+        jar="G:\android\Telegram\violetetelegram\TMessagesProj\libs\adad-2.9.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="5c94c9e323d863a773204b89f88ab1e4ba31fd67">
+        <dex dex="G:\android\Telegram\violetetelegram\TMessagesProj\build\intermediates\pre-dexed\debug\adad-2.9-17a3292fe634f575e551809827fd4a3a1c8c9384.jar" />
+    </item>
+    <item
+        jar="C:\Users\Kharmagas\.gradle\caches\modules-2\files-2.1\org.apache.httpcomponents\httpcore\4.2.1\2d503272bf0a8b5f92d64db78b4ba9abbaccc6fd\httpcore-4.2.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="2d503272bf0a8b5f92d64db78b4ba9abbaccc6fd">
+        <dex dex="G:\android\Telegram\violetetelegram\TMessagesProj\build\intermediates\pre-dexed\debug\httpcore-4.2.1-e8214953badc511c8860ca7bb080fc549f66be0f.jar" />
+    </item>
+    <item
+        jar="C:\Users\Kharmagas\.gradle\caches\modules-2\files-2.1\net.hockeyapp.android\HockeySDK\3.5.0\1624c0039a56f9cc45915def1632c225326c3c03\HockeySDK-3.5.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="1624c0039a56f9cc45915def1632c225326c3c03">
+        <dex dex="G:\android\Telegram\violetetelegram\TMessagesProj\build\intermediates\pre-dexed\debug\HockeySDK-3.5.0-254ae6e63099f85a13303a5dd3db4956048e60f5.jar" />
+    </item>
+
+</items>
