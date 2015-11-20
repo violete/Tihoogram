@@ -975,4 +975,14 @@
     <!--update text-->
     <string name="updateText">Telegram for Android has been updated. New in version 3.2.5:\n\n- New animations and many visual improvements\n- Support for new emoji\n- Other improvements and bug fixes</string>
     <string name="updateBuild">647</string>
+
+    <!-- about us activity-->
+    <string name="activity_about_us__txt__follow_us">همراه ما باشید!</string>
+    <string name="activity_about_us__txt__email_address">h  e  l  l  o  @  v  i  o  l  e  t  e  .  n  e  t</string>
+    <string name="title_activity_about_us">دربارهٔ ما</string>
+    <string name="cd_logo">Logo</string>
+    <string name="cd_facebook">facebook</string>
+    <string name="cd_google_plus">Google Plus</string>
+    <string name="cd_twitter">Twitter</string>
+    <string name="action_settings">Settings</string>
 </resources>

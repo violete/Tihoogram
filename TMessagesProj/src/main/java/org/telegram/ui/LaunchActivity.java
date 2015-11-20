@@ -43,6 +43,7 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import org.telegram.AboutUsActivity;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.PhoneFormat.PhoneFormat;
 import org.telegram.messenger.ChatObject;
@@ -276,7 +277,7 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
         listView.setChoiceMode(AbsListView.CHOICE_MODE_SINGLE);
         listView.setDivider(null);
         listView.setDividerHeight(0);
-        listView.setVerticalScrollBarEnabled(false);
+        listView.setVerticalScrollBarEnabled(true);
         drawerLayoutContainer.setDrawerLayout(listView);
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) listView.getLayoutParams();
         Point screenSize = AndroidUtilities.getRealScreenSize();
@@ -337,6 +338,9 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
                     } catch (Exception e) {
                         FileLog.e("tmessages", e);
                     }
+                    drawerLayoutContainer.closeDrawer(false);
+                } else if (position == 10) {
+                    startActivity(new Intent(LaunchActivity.this, AboutUsActivity.class));
                     drawerLayoutContainer.closeDrawer(false);
                 }
             }
