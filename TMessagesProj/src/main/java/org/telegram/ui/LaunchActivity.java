@@ -342,6 +342,12 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
                 } else if (position == 10) {
                     startActivity(new Intent(LaunchActivity.this, AboutUsActivity.class));
                     drawerLayoutContainer.closeDrawer(false);
+                } else if (position == 11) {
+                    Intent intent = new Intent(Intent.ACTION_EDIT);
+                    intent.setData(Uri.parse("bazaar://details?id=" + ApplicationLoader.applicationContext.getPackageName()));
+                    intent.setPackage("com.farsitel.bazaar");
+                    startActivity(intent);
+                    drawerLayoutContainer.closeDrawer(false);
                 }
             }
         });
