@@ -227,7 +227,7 @@ public class LocaleController {
         localeInfo = new LocaleInfo();
         localeInfo.name = "فارسی";
         localeInfo.nameEnglish = "Persian";
-        localeInfo.shortName = "fa_IR";
+        localeInfo.shortName = "fa";
         localeInfo.pathToFile = null;
         sortedLanguages.add(localeInfo);
         languagesDict.put(localeInfo.shortName, localeInfo);
@@ -773,7 +773,10 @@ public class LocaleController {
         if (lang == null) {
             lang = "en";
         }
-        isRTL = lang.toLowerCase().equals("ar");
+
+        isRTL = lang.toLowerCase().equals("ar")
+                || lang.toLowerCase().equals("fa")
+                || lang.toLowerCase().equals("az");
         nameDisplayOrder = lang.toLowerCase().equals("ko") ? 2 : 1;
 
         formatterMonth = createFormatter(locale, getStringInternal("formatterMonth", R.string.formatterMonth), "dd MMM");

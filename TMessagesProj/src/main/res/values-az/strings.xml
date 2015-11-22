@@ -33,7 +33,7 @@
     <string name="NoChats">...حله چت یخده</string>
     <string name="NoChatsHelp">دکمه تزه پیغامه فشار ور\n تا چت باش لییاسز\n یا برای انتخاب های چوختر دکمه منونه فشار ور.</string>
     <string name="WaitingForNetwork">...شبکه گوزلمخ</string>
-    <string name="Connecting">... وصل اولماخ</string>
+    <string name="Connecting">وصل اولماخ...</string>
     <string name="Updating">تزه اولماخ...</string>
     <string name="NewSecretChat">تزه سیر چت</string>
     <string name="AwaitingEncryption">گوزلمخ برای %s آنلاین اولماخ...</string>

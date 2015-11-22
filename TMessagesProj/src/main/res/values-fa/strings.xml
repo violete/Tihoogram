@@ -3,7 +3,7 @@
   <string name="AppName">تلگرام</string>
   <string name="LanguageName">پارسی</string>
   <string name="LanguageNameInEnglish">Parsi</string>
-  <string name="LanguageCode">fa_IR</string>
+  <string name="LanguageCode">fa</string>
   <!--signin view-->
   <string name="YourPhone">شماره موبایل شما</string>
   <string name="StartText">‫لطفاً کد کشورتون را تأیید  \n و شماره تلفنتون رو وارد کنین.</string>
