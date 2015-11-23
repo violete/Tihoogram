@@ -8,12 +8,15 @@
 
 package org.telegram.ui.Adapters;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
@@ -43,7 +46,7 @@ public class DrawerLayoutAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return UserConfig.isClientActivated() ? 12 : 0;
+        return UserConfig.isClientActivated() ? 13 : 0;
     }
 
     @Override
@@ -100,6 +103,14 @@ public class DrawerLayoutAdapter extends BaseAdapter {
                 actionCell.setTextAndIcon(LocaleController.getString("title_activity_about_us", R.string.title_activity_about_us), R.drawable.ic_action_about_us);
             } else if (i == 11) {
                 actionCell.setTextAndIcon(LocaleController.getString("action_rate", R.string.action_rate), R.drawable.action_rate);
+            } else if (i == 12) {
+                SharedPreferences preferences = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", Activity.MODE_PRIVATE);
+                boolean showAdvertise = preferences.getBoolean("showAdvertise",true);
+                if(!showAdvertise) {
+                    actionCell.setTextAndIcon(LocaleController.getString("action_show_advertise", R.string.action_show_advertise), R.drawable.ic_advertise);
+                } else {
+                    actionCell.setTextAndIcon(LocaleController.getString("action_show_advertise", R.string.action_remove_advertise), R.drawable.ic_advertise);
+                }
             }
         }
 

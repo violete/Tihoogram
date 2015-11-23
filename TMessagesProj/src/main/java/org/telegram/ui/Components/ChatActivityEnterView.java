@@ -14,6 +14,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.media.AudioManager;
@@ -304,7 +305,8 @@ public class ChatActivityEnterView extends FrameLayoutFixed implements Notificat
         SharedPreferences preferences = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", Activity.MODE_PRIVATE);
         sendByEnter = preferences.getBoolean("send_by_enter", false);
 
-        //Adad
+        //Start Add Adad
+        boolean showAdvertise = preferences.getBoolean("showAdvertise",true);
         textFieldContainerWithAdad = new LinearLayout(context);
         adadContainer = new LinearLayout(context);
         textFieldContainerWithAdad.setVisibility(View.VISIBLE);
@@ -313,9 +315,19 @@ public class ChatActivityEnterView extends FrameLayoutFixed implements Notificat
         adadView.setToken("chertopert");
         adadView.setVisibility(View.VISIBLE);
         adadContainer.setGravity(Gravity.CENTER);
-        adadContainer.addView(adadView);
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        layoutParams.setMargins(0,5,0,5);
+        adadContainer.addView(adadView, layoutParams);
         adadView.bringToFront();
-
+        adadContainer.setBackgroundColor(Color.TRANSPARENT);
+        if(showAdvertise) {
+            adadContainer.setVisibility(VISIBLE);
+        } else {
+            adadContainer.setVisibility(GONE);
+        }
+        textFieldContainerWithAdad.setBackgroundColor(Color.TRANSPARENT);
+        this.setBackgroundColor(Color.TRANSPARENT);
         textFieldContainer = new LinearLayout(context);
         textFieldContainer.setBackgroundColor(0xffffffff);
         textFieldContainer.setOrientation(LinearLayout.HORIZONTAL);
@@ -323,6 +335,7 @@ public class ChatActivityEnterView extends FrameLayoutFixed implements Notificat
 
         textFieldContainerWithAdad.addView(adadContainer, LayoutHelper.createFrame(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT, Gravity.CENTER));
         textFieldContainerWithAdad.addView(textFieldContainer, LayoutHelper.createFrame(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT, Gravity.LEFT | Gravity.TOP, 0, 2, 0, 0));
+        //End Add Adad
 
         FrameLayoutFixed frameLayout = new FrameLayoutFixed(context);
         textFieldContainer.addView(frameLayout, LayoutHelper.createLinear(0, LayoutHelper.WRAP_CONTENT, 1.0f));

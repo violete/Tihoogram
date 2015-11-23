@@ -989,4 +989,8 @@
     <string name="cd_twitter">Twitter</string>
     <string name="action_settings">Settings</string>
     <string name="action_rate">امتیاز دهید!</string>
+
+    <!--Adad-->
+    <string name="action_show_advertise">نمایش تبلیغات</string>
+    <string name="action_remove_advertise">حذف تبلیغات</string>
 </resources>

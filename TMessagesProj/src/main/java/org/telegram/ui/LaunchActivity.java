@@ -348,6 +348,14 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
                     intent.setPackage("com.farsitel.bazaar");
                     startActivity(intent);
                     drawerLayoutContainer.closeDrawer(false);
+                } else if (position == 12) {
+                    SharedPreferences preferences = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", Activity.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = preferences.edit();
+                    editor.putBoolean("showAdvertise", !preferences.getBoolean("showAdvertise", true));
+                    editor.commit();
+                    drawerLayoutContainer.closeDrawer(false);
+                    finish();
+                    startActivity(getIntent());
                 }
             }
         });
