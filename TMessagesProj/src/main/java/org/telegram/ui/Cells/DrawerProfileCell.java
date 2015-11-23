@@ -19,6 +19,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.util.TypedValue;
 import android.view.Gravity;
+import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -33,6 +34,8 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.AvatarDrawable;
 import org.telegram.ui.Components.BackupImageView;
 import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.LanguageSelectActivity;
+import org.telegram.ui.LaunchActivity;
 
 public class DrawerProfileCell extends FrameLayout {
 
@@ -44,7 +47,9 @@ public class DrawerProfileCell extends FrameLayout {
     private Rect destRect = new Rect();
     private Paint paint = new Paint();
 
-    public DrawerProfileCell(Context context) {
+    private ImageView changeLanguage;
+
+    public DrawerProfileCell(final Context context) {
         super(context);
         setBackgroundColor(0xff4c84b5);
 
@@ -76,6 +81,16 @@ public class DrawerProfileCell extends FrameLayout {
         phoneTextView.setSingleLine(true);
         phoneTextView.setGravity(Gravity.LEFT);
         addView(phoneTextView, LayoutHelper.createFrame(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT, Gravity.LEFT | Gravity.BOTTOM, 16, 0, 16, 9));
+
+        changeLanguage = new ImageView(context);
+        changeLanguage.setImageResource(R.drawable.ic_change_language);
+        changeLanguage.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((LaunchActivity) context).presentFragment(new LanguageSelectActivity());
+            }
+        });
+        addView(changeLanguage, LayoutHelper.createFrame(24, 24, Gravity.RIGHT | Gravity.BOTTOM, 16, 0, 16, 9));
     }
 
     @Override
