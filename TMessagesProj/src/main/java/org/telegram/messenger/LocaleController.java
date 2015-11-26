@@ -235,6 +235,14 @@ public class LocaleController {
         localeInfo = new LocaleInfo();
         localeInfo.name = "تورکی";
         localeInfo.nameEnglish = "Turk";
+        localeInfo.shortName = "tu";
+        localeInfo.pathToFile = null;
+        sortedLanguages.add(localeInfo);
+        languagesDict.put(localeInfo.shortName, localeInfo);
+
+        localeInfo = new LocaleInfo();
+        localeInfo.name = "İngilis dili";
+        localeInfo.nameEnglish = "İngilisi dili";
         localeInfo.shortName = "az";
         localeInfo.pathToFile = null;
         sortedLanguages.add(localeInfo);
@@ -776,7 +784,7 @@ public class LocaleController {
 
         isRTL = lang.toLowerCase().equals("ar")
                 || lang.toLowerCase().equals("fa")
-                || lang.toLowerCase().equals("az");
+                || lang.toLowerCase().equals("tu");
         nameDisplayOrder = lang.toLowerCase().equals("ko") ? 2 : 1;
 
         formatterMonth = createFormatter(locale, getStringInternal("formatterMonth", R.string.formatterMonth), "dd MMM");
