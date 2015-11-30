@@ -131,8 +131,10 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
                 SharedPreferences preferences = ApplicationLoader.applicationContext.getSharedPreferences("logininfo", MODE_PRIVATE);
                 Map<String, ?> state = preferences.getAll();
                 if (state.isEmpty()) {
-                    Intent intent2 = new Intent(this, IntroActivity.class);
-                    startActivity(intent2);
+                    Intent langIntent = new Intent(this, SelectLanguageBeforeLogin.class);
+                    startActivity(langIntent);
+//                    Intent intent2 = new Intent(this, IntroActivity.class);
+//                    startActivity(intent2);
                     super.onCreate(savedInstanceState);
                     finish();
                     return;
