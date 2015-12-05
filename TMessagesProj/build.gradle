@@ -85,5 +85,6 @@ android {
         targetSdkVersion 23
         versionCode 654
         versionName "3.2.6"
+        applicationId "net.violete.telegram"
     }
 }
