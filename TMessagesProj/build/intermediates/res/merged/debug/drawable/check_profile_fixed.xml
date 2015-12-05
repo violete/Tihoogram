@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-
-<layer-list
-    xmlns:android="http://schemas.android.com/apk/res/android" >
-    <item
-        android:drawable="@drawable/check_profile"
-        android:top="3dp" />
-</layer-list><!-- From: file:/G:/android/Telegram/violetetelegram/TMessagesProj/src/main/res/drawable/check_profile_fixed.xml -->
