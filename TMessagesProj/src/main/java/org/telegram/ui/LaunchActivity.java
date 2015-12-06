@@ -95,6 +95,7 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
     private static ArrayList<BaseFragment> mainFragmentsStack = new ArrayList<>();
     private static ArrayList<BaseFragment> layerFragmentsStack = new ArrayList<>();
     private static ArrayList<BaseFragment> rightFragmentsStack = new ArrayList<>();
+    private ViewTreeObserver.OnGlobalLayoutListener onGlobalLayoutListener;
 
     private ActionBarLayout actionBarLayout;
     private ActionBarLayout layersActionBarLayout;
@@ -279,7 +280,7 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
         listView.setChoiceMode(AbsListView.CHOICE_MODE_SINGLE);
         listView.setDivider(null);
         listView.setDividerHeight(0);
-        listView.setVerticalScrollBarEnabled(true);
+        listView.setVerticalScrollBarEnabled(false);
         drawerLayoutContainer.setDrawerLayout(listView);
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) listView.getLayoutParams();
         Point screenSize = AndroidUtilities.getRealScreenSize();
@@ -477,6 +478,18 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
 
         handleIntent(getIntent(), false, savedInstanceState != null, false);
         needLayout();
+
+        final View view = getWindow().getDecorView().getRootView();
+        view.getViewTreeObserver().addOnGlobalLayoutListener(onGlobalLayoutListener = new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                int height = view.getMeasuredHeight();
+                if (height > AndroidUtilities.dp(100) && height < AndroidUtilities.displaySize.y && height + AndroidUtilities.dp(100) > AndroidUtilities.displaySize.y) {
+                    AndroidUtilities.displaySize.y = height;
+                    FileLog.e("tmessages", "fix display size y to " + AndroidUtilities.displaySize.y);
+                }
+            }
+        });
     }
 
     private void showPasscodeActivity() {
@@ -918,8 +931,13 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
                 if (dialogId == 0) {
                     Bundle args = new Bundle();
                     args.putBoolean("onlySelect", true);
-                    args.putString("selectAlertString", LocaleController.getString("SendMessagesTo", R.string.SendMessagesTo));
-                    args.putString("selectAlertStringGroup", LocaleController.getString("SendMessagesToGroup", R.string.SendMessagesToGroup));
+                    if (contactsToSend != null) {
+                        args.putString("selectAlertString", LocaleController.getString("SendContactTo", R.string.SendMessagesTo));
+                        args.putString("selectAlertStringGroup", LocaleController.getString("SendContactToGroup", R.string.SendContactToGroup));
+                    } else {
+                        args.putString("selectAlertString", LocaleController.getString("SendMessagesTo", R.string.SendMessagesTo));
+                        args.putString("selectAlertStringGroup", LocaleController.getString("SendMessagesToGroup", R.string.SendMessagesToGroup));
+                    }
                     DialogsActivity fragment = new DialogsActivity(args);
                     fragment.setDelegate(this);
                     boolean removeLast;
@@ -1023,7 +1041,7 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
 
                                     if (botChat != null) {
                                         final TLRPC.User user = !res.users.isEmpty() ? res.users.get(0) : null;
-                                        if (user == null || (user.flags & TLRPC.USER_FLAG_BOT) != 0 && (user.flags & TLRPC.USER_FLAG_BOT_CANT_JOIN_GROUP) != 0) {
+                                        if (user == null || user.bot && user.bot_nochats) {
                                             try {
                                                 Toast.makeText(LaunchActivity.this, LocaleController.getString("BotCantJoinGroups", R.string.BotCantJoinGroups), Toast.LENGTH_SHORT).show();
                                             } catch (Exception e) {
@@ -1055,7 +1073,7 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
                                         } else {
                                             args.putInt("user_id", res.users.get(0).id);
                                         }
-                                        if (botUser != null) {
+                                        if (botUser != null && res.users.size() > 0 && res.users.get(0).bot) {
                                             args.putString("botUser", botUser);
                                         }
                                         ChatActivity fragment = new ChatActivity(args);
@@ -1105,7 +1123,7 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
                                         } else {
                                             AlertDialog.Builder builder = new AlertDialog.Builder(LaunchActivity.this);
                                             builder.setTitle(LocaleController.getString("AppName", R.string.AppName));
-                                            if ((invite.flags & 1) != 0 || ChatObject.isChannel(invite.chat)) {
+                                            if (!invite.megagroup && invite.channel || ChatObject.isChannel(invite.chat) && !invite.chat.megagroup) {
                                                 builder.setMessage(LocaleController.formatString("ChannelJoinTo", R.string.ChannelJoinTo, invite.chat != null ? invite.chat.title : invite.title));
                                             } else {
                                                 builder.setMessage(LocaleController.formatString("JoinToGroup", R.string.JoinToGroup, invite.chat != null ? invite.chat.title : invite.title));
@@ -1568,6 +1586,18 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
             if (visibleDialog != null) {
                 visibleDialog.dismiss();
                 visibleDialog = null;
+            }
+        } catch (Exception e) {
+            FileLog.e("tmessages", e);
+        }
+        try {
+            if (onGlobalLayoutListener != null) {
+                final View view = getWindow().getDecorView().getRootView();
+                if (Build.VERSION.SDK_INT < 16) {
+                    view.getViewTreeObserver().removeGlobalOnLayoutListener(onGlobalLayoutListener);
+                } else {
+                    view.getViewTreeObserver().removeOnGlobalLayoutListener(onGlobalLayoutListener);
+                }
             }
         } catch (Exception e) {
             FileLog.e("tmessages", e);
