@@ -25,6 +25,7 @@ public class BuildVars {
     public static String APP_HASH = "ebfaa22710b9372b4679b8e81d5bf264";
     //public static String APP_HASH = "5bce48dc7d331e62c955669eb7233217";
     public static String HOCKEY_APP_HASH = "aa53be0c2bc192b3da70f62f8c37df19";
+    public static String HOCKEY_APP_HASH_DEBUG = "aa53be0c2bc192b3da70f62f8c37df19";
     //public static String GCM_SENDER_ID = "760348033672";
     public static String GCM_SENDER_ID = "181164171592";
     public static String SEND_LOGS_EMAIL = "support@aniways.com";

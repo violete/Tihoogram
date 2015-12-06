@@ -42,4 +42,5 @@
             android:id="@+id/identicon_text"/>
 
     </FrameLayout>
+
 </LinearLayout>
