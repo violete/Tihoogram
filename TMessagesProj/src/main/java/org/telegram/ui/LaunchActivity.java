@@ -346,11 +346,15 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
                     startActivity(new Intent(LaunchActivity.this, AboutUsActivity.class));
                     drawerLayoutContainer.closeDrawer(false);
                 } else if (position == 11) {
-                    Intent intent = new Intent(Intent.ACTION_EDIT);
-                    intent.setData(Uri.parse("bazaar://details?id=" + ApplicationLoader.applicationContext.getPackageName()));
-                    intent.setPackage("com.farsitel.bazaar");
-                    startActivity(intent);
-                    drawerLayoutContainer.closeDrawer(false);
+                    try {
+                        Intent intent = new Intent(Intent.ACTION_EDIT);
+                        intent.setData(Uri.parse("bazaar://details?id=" + ApplicationLoader.applicationContext.getPackageName()));
+                        intent.setPackage("com.farsitel.bazaar");
+                        startActivity(intent);
+                        drawerLayoutContainer.closeDrawer(false);
+                    }catch (Exception e){
+
+                    }
                 } else if (position == 12) {
                     SharedPreferences preferences = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", Activity.MODE_PRIVATE);
                     SharedPreferences.Editor editor = preferences.edit();
