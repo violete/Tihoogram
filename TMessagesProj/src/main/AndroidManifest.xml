@@ -45,7 +45,8 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/AppName"
         android:largeHeap="true"
-        android:theme="@style/Theme.TMessages.Start">
+        android:theme="@style/Theme.TMessages.Start"
+        android:manageSpaceActivity="org.telegram.ui.ManageSpaceActivity">
 
         <activity
             android:name="org.telegram.ui.LaunchActivity"
@@ -107,6 +108,13 @@
                 <data android:scheme="tg" />
             </intent-filter>
             <meta-data android:name="android.service.chooser.chooser_target_service" android:value=".TgChooserTargetService" />
+        </activity>
+        <activity
+            android:name="org.telegram.ui.ManageSpaceActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:hardwareAccelerated="@bool/useHardwareAcceleration"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustPan">
         </activity>
         <activity
             android:name="org.telegram.ui.IntroActivity"
@@ -186,6 +194,7 @@
 
         <service android:name=".NotificationsService" android:enabled="true"/>
         <service android:name=".NotificationRepeat" android:exported="false"/>
+        <service android:name=".ClearCacheService" android:exported="false"/>
         <service android:name=".VideoEncodingService" android:enabled="true"/>
         <service android:name=".MusicPlayerService" android:exported="true" android:enabled="true"/>
 

@@ -147,7 +147,6 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
         setTheme(R.style.Theme_TMessages);
         getWindow().setBackgroundDrawableResource(R.drawable.transparent);
 
-
         super.onCreate(savedInstanceState);
         //adad
         Adad.setTestMode(true);
@@ -388,7 +387,7 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
         NotificationCenter.getInstance().addObserver(this, NotificationCenter.mainUserInfoChanged);
         NotificationCenter.getInstance().addObserver(this, NotificationCenter.closeOtherAppActivities);
         NotificationCenter.getInstance().addObserver(this, NotificationCenter.didUpdatedConnectionState);
-        NotificationCenter.getInstance().addObserver(this, NotificationCenter.spamErrorReceived);
+        NotificationCenter.getInstance().addObserver(this, NotificationCenter.needShowAlert);
         if (Build.VERSION.SDK_INT < 14) {
             NotificationCenter.getInstance().addObserver(this, NotificationCenter.screenStateChanged);
         }
@@ -692,7 +691,7 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
                                     }
                                 }
                                 if (sendingText != null) {
-                                    if (sendingText.contains("WhatsApp")) { //who needs this sent from ...?
+                                    if (sendingText.contains("WhatsApp")) { //remove unnecessary caption 'sent from WhatsApp' from photos forwarded from WhatsApp
                                         sendingText = null;
                                     }
                                 }
@@ -1144,7 +1143,11 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
                                     } else {
                                         AlertDialog.Builder builder = new AlertDialog.Builder(LaunchActivity.this);
                                         builder.setTitle(LocaleController.getString("AppName", R.string.AppName));
-                                        builder.setMessage(LocaleController.getString("JoinToGroupErrorNotExist", R.string.JoinToGroupErrorNotExist));
+                                        if (error.text.startsWith("FLOOD_WAIT")) {
+                                            builder.setMessage(LocaleController.getString("FloodWait", R.string.FloodWait));
+                                        } else {
+                                            builder.setMessage(LocaleController.getString("JoinToGroupErrorNotExist", R.string.JoinToGroupErrorNotExist));
+                                        }
                                         builder.setPositiveButton(LocaleController.getString("OK", R.string.OK), null);
                                         showAlertDialog(builder);
                                     }
@@ -1152,7 +1155,7 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
                             }
                         });
                     }
-                });
+                }, ConnectionsManager.RequestFlagFailOnServerErrors);
             } else if (state == 1) {
                 TLRPC.TL_messages_importChatInvite req = new TLRPC.TL_messages_importChatInvite();
                 req.hash = group;
@@ -1176,21 +1179,24 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
                                         if (actionBarLayout != null) {
                                             TLRPC.Updates updates = (TLRPC.Updates) response;
                                             if (!updates.chats.isEmpty()) {
+                                                TLRPC.Chat chat = updates.chats.get(0);
+                                                chat.left = false;
+                                                chat.kicked = false;
                                                 MessagesController.getInstance().putUsers(updates.users, false);
                                                 MessagesController.getInstance().putChats(updates.chats, false);
                                                 Bundle args = new Bundle();
-                                                int chat_id = updates.chats.get(0).id;
-                                                args.putInt("chat_id", chat_id);
+                                                args.putInt("chat_id", chat.id);
                                                 ChatActivity fragment = new ChatActivity(args);
                                                 NotificationCenter.getInstance().postNotificationName(NotificationCenter.closeChats);
                                                 actionBarLayout.presentFragment(fragment, false, true, true);
-                                                MessagesController.getInstance().generateJoinMessage(chat_id);
                                             }
                                         }
                                     } else {
                                         AlertDialog.Builder builder = new AlertDialog.Builder(LaunchActivity.this);
                                         builder.setTitle(LocaleController.getString("AppName", R.string.AppName));
-                                        if (error.text.equals("USERS_TOO_MUCH")) {
+                                        if (error.text.startsWith("FLOOD_WAIT")) {
+                                            builder.setMessage(LocaleController.getString("FloodWait", R.string.FloodWait));
+                                        } else if (error.text.equals("USERS_TOO_MUCH")) {
                                             builder.setMessage(LocaleController.getString("JoinToGroupErrorFull", R.string.JoinToGroupErrorFull));
                                         } else {
                                             builder.setMessage(LocaleController.getString("JoinToGroupErrorNotExist", R.string.JoinToGroupErrorNotExist));
@@ -1202,7 +1208,7 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
                             }
                         });
                     }
-                });
+                }, ConnectionsManager.RequestFlagFailOnServerErrors);
             }
         } else if (sticker != null) {
             if (!mainFragmentsStack.isEmpty()) {
@@ -1380,7 +1386,7 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
         NotificationCenter.getInstance().removeObserver(this, NotificationCenter.mainUserInfoChanged);
         NotificationCenter.getInstance().removeObserver(this, NotificationCenter.closeOtherAppActivities);
         NotificationCenter.getInstance().removeObserver(this, NotificationCenter.didUpdatedConnectionState);
-        NotificationCenter.getInstance().removeObserver(this, NotificationCenter.spamErrorReceived);
+        NotificationCenter.getInstance().removeObserver(this, NotificationCenter.needShowAlert);
         if (Build.VERSION.SDK_INT < 14) {
             NotificationCenter.getInstance().removeObserver(this, NotificationCenter.screenStateChanged);
         }
@@ -1687,27 +1693,31 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
                     onPasscodeResume();
                 }
             }
-        } else if (id == NotificationCenter.spamErrorReceived) {
+        } else if (id == NotificationCenter.needShowAlert) {
             final Integer reason = (Integer) args[0];
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle(LocaleController.getString("AppName", R.string.AppName));
             builder.setPositiveButton(LocaleController.getString("OK", R.string.OK), null);
-            builder.setNegativeButton(LocaleController.getString("MoreInfo", R.string.MoreInfo), new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    try {
-                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(LocaleController.getString("NobodyLikesSpamUrl", R.string.NobodyLikesSpamUrl)));
-                        intent.putExtra(Browser.EXTRA_APPLICATION_ID, getPackageName());
-                        startActivity(intent);
-                    } catch (Exception e) {
-                        FileLog.e("tmessages", e);
+            if (reason != 2) {
+                builder.setNegativeButton(LocaleController.getString("MoreInfo", R.string.MoreInfo), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        try {
+                            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(LocaleController.getString("NobodyLikesSpamUrl", R.string.NobodyLikesSpamUrl)));
+                            intent.putExtra(Browser.EXTRA_APPLICATION_ID, getPackageName());
+                            startActivity(intent);
+                        } catch (Exception e) {
+                            FileLog.e("tmessages", e);
+                        }
                     }
-                }
-            });
+                });
+            }
             if (reason == 0) {
                 builder.setMessage(LocaleController.getString("NobodyLikesSpam1", R.string.NobodyLikesSpam1));
             } else if (reason == 1) {
                 builder.setMessage(LocaleController.getString("NobodyLikesSpam2", R.string.NobodyLikesSpam2));
+            } else if (reason == 2) {
+                builder.setMessage((String) args[1]);
             }
             if (!mainFragmentsStack.isEmpty()) {
                 mainFragmentsStack.get(mainFragmentsStack.size() - 1).showDialog(builder.create());
