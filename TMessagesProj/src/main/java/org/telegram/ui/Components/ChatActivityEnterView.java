@@ -65,6 +65,10 @@ import java.util.Locale;
 
 import ir.adad.AdView;
 
+import org.telegram.ui.StickersActivity;
+
+import java.util.Locale;
+
 public class ChatActivityEnterView extends FrameLayoutFixed implements NotificationCenter.NotificationCenterDelegate, SizeNotifierFrameLayout.SizeNotifierFrameLayoutDelegate {
 
     public interface ChatActivityEnterViewDelegate {
@@ -1535,6 +1539,13 @@ public class ChatActivityEnterView extends FrameLayoutFixed implements Notificat
                         SendMessagesHelper.getInstance().sendSticker(sticker, dialog_id, replyingMessageObject, asAdmin());
                         if (delegate != null) {
                             delegate.onMessageSend(null);
+                        }
+                    }
+
+                    @Override
+                    public void onStickersSettingsClick() {
+                        if (parentFragment != null) {
+                            parentFragment.presentFragment(new StickersActivity());
                         }
                     }
                 });

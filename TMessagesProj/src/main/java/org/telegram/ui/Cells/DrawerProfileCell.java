@@ -88,6 +88,7 @@ public class DrawerProfileCell extends FrameLayout {
             @Override
             public void onClick(View v) {
                 ((LaunchActivity) context).presentFragment(new LanguageSelectActivity());
+                ((LaunchActivity) context).drawerLayoutContainer.closeDrawer(false);
             }
         });
         addView(changeLanguage, LayoutHelper.createFrame(24, 24, Gravity.RIGHT | Gravity.BOTTOM, 16, 0, 16, 9));
