@@ -3,7 +3,7 @@
 build/
 obj/
 *.iml
-local.properties
+*.properties
 *.keystore
 gradle.properties
 
