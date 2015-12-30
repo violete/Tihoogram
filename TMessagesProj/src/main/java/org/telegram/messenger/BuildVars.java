@@ -24,8 +24,8 @@ public class BuildVars {
     //public static int APP_ID = 2458;
     public static String APP_HASH = "d68d79b2ee161e4a39df6b1b11c93e1e";
     //public static String APP_HASH = "5bce48dc7d331e62c955669eb7233217";
-//    public static String HOCKEY_APP_HASH = "aa53be0c2bc192b3da70f62f8c37df19";
-//    public static String HOCKEY_APP_HASH_DEBUG = "aa53be0c2bc192b3da70f62f8c37df19";
+    public static String HOCKEY_APP_HASH = "aa53be0c2bc192b3da70f62f8c37df19";
+    public static String HOCKEY_APP_HASH_DEBUG = "aa53be0c2bc192b3da70f62f8c37df19";
     //public static String GCM_SENDER_ID = "760348033672";
     public static String GCM_SENDER_ID = "407894285626";
     public static String SEND_LOGS_EMAIL = "violetenet+telegram@gmail.com";
