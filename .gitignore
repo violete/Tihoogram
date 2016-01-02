@@ -10,5 +10,4 @@ gradle.properties
 # Mac specific files
 .DS_Store
 
-TMessagesProj/src/main/java/org/telegram/messenger/BuildVars.java
 TMessagesProj/TMessagesProj.iml
