@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--  The property id associated with this analytics tracker -->
+    <string name="ga_trackingId">UA-51656671-20</string>
+    <!--Automatically track an Exception each time an uncaught exception is thrown in your application. false by default.-->
+    <bool name="ga_reportUncaughtExceptions">true</bool>
+    <!-- Enable automatic Activity measurement -->
+    <bool name="ga_autoActivityTracking">true</bool>
+    <screenName name="org.telegram.ui.AboutUsActivity">
+        AboutUsActivity
+    </screenName>
+    <screenName name="org.telegram.ui.AudioPlayerActivity">
+        AudioPlayerActivity
+    </screenName>
+    <screenName name="org.telegram.ui.AudioSelectActivity">
+        AudioSelectActivity
+    </screenName>
+    <screenName name="org.telegram.ui.BlockedUsersActivity">
+        BlockedUsersActivity
+    </screenName>
+    <screenName name="org.telegram.ui.CacheControlActivity">
+        CacheControlActivity
+    </screenName>
+    <screenName name="org.telegram.ui.ChangeChatNameActivity">
+        ChangeChatNameActivity
+    </screenName>
+    <screenName name="org.telegram.ui.ChangeNameActivity">
+        ChangeNameActivity
+    </screenName>
+    <screenName name="org.telegram.ui.ChangePhoneActivity">
+        ChangePhoneActivity
+    </screenName>
+    <screenName name="org.telegram.ui.ChangePhoneHelpActivity">
+        ChangePhoneHelpActivity
+    </screenName>
+    <screenName name="org.telegram.ui.ChangeUsernameActivity">
+        ChangeUsernameActivity
+    </screenName>
+    <screenName name="org.telegram.ui.ChannelCreateActivity">
+        ChannelCreateActivity
+    </screenName>
+    <screenName name="org.telegram.ui.ChannelEditActivity">
+        ChannelEditActivity
+    </screenName>
+    <screenName name="org.telegram.ui.ChannelIntroActivity">
+        ChannelIntroActivity
+    </screenName>
+    <screenName name="org.telegram.ui.ChannelUsersActivity">
+        ChannelUsersActivity
+    </screenName>
+    <screenName name="org.telegram.ui.ChatActivity">
+        ChatActivity
+    </screenName>
+    <screenName name="org.telegram.ui.ContactAddActivity">
+        ContactAddActivity
+    </screenName>
+    <screenName name="org.telegram.ui.ContactsActivity">
+        ContactsActivity
+    </screenName>
+    <screenName name="org.telegram.ui.CountrySelectActivity">
+        CountrySelectActivity
+    </screenName>
+    <screenName name="org.telegram.ui.DialogsActivity">
+        DialogsActivity
+    </screenName>
+    <screenName name="org.telegram.ui.DocumentSelectActivity">
+        DocumentSelectActivity
+    </screenName>
+    <screenName name="org.telegram.ui.GroupCreateActivity">
+        GroupCreateActivity
+    </screenName>
+    <screenName name="org.telegram.ui.GroupCreateFinalActivity">
+        GroupCreateFinalActivity
+    </screenName>
+    <screenName name="org.telegram.ui.GroupInviteActivity">
+        GroupInviteActivity
+    </screenName>
+    <screenName name="org.telegram.ui.IdenticonActivity">
+        IdenticonActivity
+    </screenName>
+    <screenName name="org.telegram.ui.IntroActivity">
+        IntroActivity
+    </screenName>
+    <screenName name="org.telegram.ui.LanguageSelectActivity">
+        LanguageSelectActivity
+    </screenName>
+    <screenName name="org.telegram.ui.LastSeenActivity">
+        LastSeenActivity
+    </screenName>
+    <screenName name="org.telegram.ui.LastSeenUsersActivity">
+        LastSeenUsersActivity
+    </screenName>
+    <screenName name="org.telegram.ui.LaunchActivity">
+        LaunchActivity
+    </screenName>
+    <screenName name="org.telegram.ui.LocationActivity">
+        LocationActivity
+    </screenName>
+    <screenName name="org.telegram.ui.LoginActivity">
+        LoginActivity
+    </screenName>
+    <screenName name="org.telegram.ui.ManageSpaceActivity">
+        ManageSpaceActivity
+    </screenName>
+    <screenName name="org.telegram.ui.MediaActivity">
+        MediaActivity
+    </screenName>
+    <screenName name="org.telegram.ui.NotificationsSettingsActivity">
+        NotificationsSettingsActivity
+    </screenName>
+    <screenName name="org.telegram.ui.PasscodeActivity">
+        PasscodeActivity
+    </screenName>
+    <screenName name="org.telegram.ui.PhotoAlbumPickerActivity">
+        PhotoAlbumPickerActivity
+    </screenName>
+    <screenName name="org.telegram.ui.PhotoCropActivity">
+        PhotoCropActivity
+    </screenName>
+    <screenName name="org.telegram.ui.PhotoPickerActivity">
+        PhotoPickerActivity
+    </screenName>
+    <screenName name="org.telegram.ui.PhotoViewer">
+        PhotoViewer
+    </screenName>
+    <screenName name="org.telegram.ui.PopupNotificationActivity">
+        PopupNotificationActivity
+    </screenName>
+    <screenName name="org.telegram.ui.PrivacySettingsActivity">
+        PrivacySettingsActivity
+    </screenName>
+    <screenName name="org.telegram.ui.ProfileActivity">
+        ProfileActivity
+    </screenName>
+    <screenName name="org.telegram.ui.ProfileNotificationsActivity">
+        ProfileNotificationsActivity
+    </screenName>
+    <screenName name="org.telegram.ui.SecretPhotoViewer">
+        SecretPhotoViewer
+    </screenName>
+    <screenName name="org.telegram.ui.SelectLanguageBeforeLogin">
+        SelectLanguageBeforeLogin
+    </screenName>
+    <screenName name="org.telegram.ui.SessionsActivity">
+        SessionsActivity
+    </screenName>
+    <screenName name="org.telegram.ui.SetAdminsActivity">
+        SetAdminsActivity
+    </screenName>
+    <screenName name="org.telegram.ui.SettingsActivity">
+        SettingsActivity
+    </screenName>
+    <screenName name="org.telegram.ui.StickerPreviewViewer">
+        StickerPreviewViewer
+    </screenName>
+    <screenName name="org.telegram.ui.StickersActivity">
+        StickersActivity
+    </screenName>
+    <screenName name="org.telegram.ui.TwoStepVerificationActivity">
+        TwoStepVerificationActivity
+    </screenName>
+    <screenName name="org.telegram.ui.VideoEditorActivity">
+        VideoEditorActivity
+    </screenName>
+    <screenName name="org.telegram.ui.WallpapersActivity">
+        WallpapersActivity
+    </screenName>
+
+
+</resources>

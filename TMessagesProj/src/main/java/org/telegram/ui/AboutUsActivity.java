@@ -1,4 +1,4 @@
-package org.telegram;
+package org.telegram.ui;
 
 import android.content.Intent;
 import android.net.Uri;

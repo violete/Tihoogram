@@ -28,6 +28,8 @@ import android.os.Handler;
 import android.os.PowerManager;
 import android.util.Base64;
 
+import com.google.android.gms.analytics.GoogleAnalytics;
+import com.google.android.gms.analytics.Tracker;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
@@ -44,6 +46,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class ApplicationLoader extends Application {
 
     private GoogleCloudMessaging gcm;
+    private Tracker mTracker;
     private AtomicInteger msgId = new AtomicInteger();
     private String regid;
     public static final String EXTRA_MESSAGE = "message";
@@ -445,5 +448,18 @@ public class ApplicationLoader extends Application {
         editor.putString(PROPERTY_REG_ID, regId);
         editor.putInt(PROPERTY_APP_VERSION, appVersion);
         editor.commit();
+    }
+
+    /**
+     * Gets the default {@link Tracker} for this {@link Application}.
+     * @return tracker
+     */
+    synchronized public Tracker getDefaultTracker() {
+        if (mTracker == null) {
+            GoogleAnalytics analytics = GoogleAnalytics.getInstance(this);
+            // To enable debug logging use: adb shell setprop log.tag.GAv4 DEBUG
+            mTracker = analytics.newTracker(R.xml.app_tracker);
+        }
+        return mTracker;
     }
 }

@@ -43,7 +43,8 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-import org.telegram.AboutUsActivity;
+import com.google.android.gms.analytics.Tracker;
+
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.PhoneFormat.PhoneFormat;
 import org.telegram.messenger.ChatObject;
@@ -115,9 +116,12 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
     private boolean tabletFullSize;
 
     private Runnable lockRunnable;
+    private Tracker mTracker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        ApplicationLoader application = (ApplicationLoader) getApplication();
+        mTracker = application.getDefaultTracker();
         ApplicationLoader.postInitApplication();
         NativeCrashManager.handleDumpFiles(this);
 
@@ -148,7 +152,7 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
         getWindow().setBackgroundDrawableResource(R.drawable.transparent);
 
         super.onCreate(savedInstanceState);
-        //adad
+        //TODO adad
         Adad.setTestMode(true);
 
         if (UserConfig.passcodeHash.length() != 0 && UserConfig.appLocked) {

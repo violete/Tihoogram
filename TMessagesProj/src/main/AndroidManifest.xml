@@ -142,7 +142,7 @@
 
         <!-- About Us-->
         <activity
-            android:name="org.telegram.AboutUsActivity"
+            android:name="org.telegram.ui.AboutUsActivity"
             android:label="@string/title_activity_about_us"
             android:theme="@style/Theme.AppCompat.NoActionBar">
         </activity>
