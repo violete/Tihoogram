@@ -26,8 +26,7 @@ public class AboutUsActivity extends AppCompatActivity {
     private void addLinksToImages() {
         Utility.addLinkToView(getBaseContext(), findViewById(R.id.logo), "http://violete.net", "About Us", "Click", "Website");
         Utility.addLinkToView(getBaseContext(), findViewById(R.id.facebook), "http://facebook.com/VioleteStudio", "About Us", "Click", "Facebook");
-        //TODO
-        Utility.addLinkToView(getBaseContext(), findViewById(R.id.google_plus), "https://plus.google.com/106947464093617372327/", "About Us", "Click", "Google Plus");
+        Utility.addLinkToView(getBaseContext(), findViewById(R.id.google_plus), "https://plus.google.com/+VioleteNet/", "About Us", "Click", "Google Plus");
         Utility.addLinkToView(getBaseContext(), findViewById(R.id.twitter), "http://twitter.com/violetestudio", "About Us", "Click", "Twitter");
 
         findViewById(R.id.email).setOnClickListener(new View.OnClickListener() {
