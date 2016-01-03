@@ -17,7 +17,7 @@ dependencies {
     compile 'org.apache.httpcomponents:httpmime:4.2.1'
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.android.support:multidex:1.0.0'
-    compile files('libs/adad-2.9.jar')
+    compile files('libs/adad-client-3.1.jar')
 }
 
 android {

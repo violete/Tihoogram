@@ -134,11 +134,14 @@
             android:windowSoftInputMode="adjustResize|stateHidden">
         </activity>
 
-        <!-- Adad Activit -->
+        <!-- Adad -->
         <activity
-            android:name="ir.adad.AdadActivity"
-            android:theme="@android:style/Theme.Dialog" >
-        </activity>
+            android:name="ir.adad.client.AdadActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:theme="@android:style/Theme.Translucent"/>
+        <meta-data
+            android:name="AdadToken"
+            android:value="612639cb35e7429f95288089b0cb8d16" />
 
         <!-- About Us-->
         <activity

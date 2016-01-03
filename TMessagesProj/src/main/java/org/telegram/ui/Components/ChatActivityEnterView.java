@@ -63,11 +63,9 @@ import org.telegram.messenger.ApplicationLoader;
 
 import java.util.Locale;
 
-import ir.adad.AdView;
-
 import org.telegram.ui.StickersActivity;
 
-import java.util.Locale;
+import ir.adad.client.Banner;
 
 public class ChatActivityEnterView extends FrameLayoutFixed implements NotificationCenter.NotificationCenterDelegate, SizeNotifierFrameLayout.SizeNotifierFrameLayoutDelegate {
 
@@ -100,7 +98,7 @@ public class ChatActivityEnterView extends FrameLayoutFixed implements Notificat
     private RecordCircle recordCircle;
 
     //Adad
-    private AdView adadView;
+    private Banner adadBanner;
     private LinearLayout adadContainer;
     private LinearLayout textFieldContainerWithAdad;
 
@@ -315,15 +313,14 @@ public class ChatActivityEnterView extends FrameLayoutFixed implements Notificat
         adadContainer = new LinearLayout(context);
         textFieldContainerWithAdad.setVisibility(View.VISIBLE);
         textFieldContainerWithAdad.setOrientation(LinearLayout.VERTICAL);
-        adadView = new AdView(context);
-        adadView.setToken("chertopert");
-        adadView.setVisibility(View.VISIBLE);
+        adadBanner = new Banner(context);
+        adadBanner.setVisibility(View.VISIBLE);
         adadContainer.setGravity(Gravity.CENTER);
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-        layoutParams.setMargins(0,5,0,5);
-        adadContainer.addView(adadView, layoutParams);
-        adadView.bringToFront();
+        layoutParams.setMargins(0,4,0,4);
+        adadContainer.addView(adadBanner, layoutParams);
+        adadBanner.bringToFront();
         adadContainer.setBackgroundColor(Color.TRANSPARENT);
         if(showAdvertise) {
             adadContainer.setVisibility(VISIBLE);
