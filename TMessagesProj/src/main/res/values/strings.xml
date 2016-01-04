@@ -1038,8 +1038,10 @@
     <string name="cd_facebook">facebook</string>
     <string name="cd_google_plus">Google Plus</string>
     <string name="cd_twitter">Twitter</string>
-    <string name="action_settings">Settings</string>
+
+    <!-- Drawer items-->
     <string name="action_rate">امتیاز دهید!</string>
+    <string name="bazaar_not_available">Bazaar not found!</string>
 
     <!--Adad-->
     <string name="action_show_advertise">نمایش تبلیغات</string>

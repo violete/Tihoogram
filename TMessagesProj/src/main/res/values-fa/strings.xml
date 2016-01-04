@@ -984,4 +984,5 @@ https://telegram.org/dl</string>
   <!--update text-->
   <string name="updateText">تلگرام نسخه اندروید به روز رسانی شد.ویژگی های جدید در ورژن 3.2.5:\n\n- انیمیشن های جدید و پیشرفت های زیاد دیداری \n- پشتیبانی از شکلک های جدید \n- بهبود های دیگر و رفع باگ ها</string>
   <string name="updateBuild">647</string>
+  <string name="bazaar_not_available">بازار پیدا نشد!</string>
 </resources>

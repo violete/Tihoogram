@@ -45,31 +45,31 @@ import android.widget.Toast;
 
 import com.google.android.gms.analytics.Tracker;
 
-import org.telegram.messenger.AndroidUtilities;
 import org.telegram.PhoneFormat.PhoneFormat;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.ContactsController;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageLoader;
+import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NativeCrashManager;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.query.StickersQuery;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.UserObject;
+import org.telegram.messenger.query.StickersQuery;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.messenger.UserConfig;
-import org.telegram.ui.Adapters.DrawerLayoutAdapter;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.DrawerLayoutContainer;
+import org.telegram.ui.Adapters.DrawerLayoutAdapter;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.PasscodeView;
 
@@ -83,6 +83,10 @@ import ir.adad.client.Adad;
 
 public class LaunchActivity extends Activity implements ActionBarLayout.ActionBarLayoutDelegate, NotificationCenter.NotificationCenterDelegate, DialogsActivity.MessagesActivityDelegate {
 
+    private static ArrayList<BaseFragment> mainFragmentsStack = new ArrayList<>();
+    private static ArrayList<BaseFragment> layerFragmentsStack = new ArrayList<>();
+    private static ArrayList<BaseFragment> rightFragmentsStack = new ArrayList<>();
+    public DrawerLayoutContainer drawerLayoutContainer;
     private boolean finished;
     private String videoPath;
     private String sendingText;
@@ -93,18 +97,13 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
     private ArrayList<String> documentsOriginalPathsArray;
     private ArrayList<TLRPC.User> contactsToSend;
     private int currentConnectionState;
-    private static ArrayList<BaseFragment> mainFragmentsStack = new ArrayList<>();
-    private static ArrayList<BaseFragment> layerFragmentsStack = new ArrayList<>();
-    private static ArrayList<BaseFragment> rightFragmentsStack = new ArrayList<>();
     private ViewTreeObserver.OnGlobalLayoutListener onGlobalLayoutListener;
-
     private ActionBarLayout actionBarLayout;
     private ActionBarLayout layersActionBarLayout;
     private ActionBarLayout rightActionBarLayout;
     private FrameLayout shadowTablet;
     private FrameLayout shadowTabletSide;
     private ImageView backgroundTablet;
-    public DrawerLayoutContainer drawerLayoutContainer;
     private DrawerLayoutAdapter drawerLayoutAdapter;
     private PasscodeView passcodeView;
     private AlertDialog visibleDialog;
@@ -197,7 +196,7 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
 
             rightActionBarLayout = new ActionBarLayout(this);
             launchLayout.addView(rightActionBarLayout);
-            relativeLayoutParams = (RelativeLayout.LayoutParams)rightActionBarLayout.getLayoutParams();
+            relativeLayoutParams = (RelativeLayout.LayoutParams) rightActionBarLayout.getLayoutParams();
             relativeLayoutParams.width = AndroidUtilities.dp(320);
             relativeLayoutParams.height = LayoutHelper.MATCH_PARENT;
             rightActionBarLayout.setLayoutParams(relativeLayoutParams);
@@ -261,7 +260,7 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
             layersActionBarLayout.setUseAlphaAnimations(true);
             layersActionBarLayout.setBackgroundResource(R.drawable.boxshadow);
             launchLayout.addView(layersActionBarLayout);
-            relativeLayoutParams = (RelativeLayout.LayoutParams)layersActionBarLayout.getLayoutParams();
+            relativeLayoutParams = (RelativeLayout.LayoutParams) layersActionBarLayout.getLayoutParams();
             relativeLayoutParams.width = AndroidUtilities.dp(530);
             relativeLayoutParams.height = AndroidUtilities.dp(528);
             layersActionBarLayout.setLayoutParams(relativeLayoutParams);
@@ -356,8 +355,8 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
                         intent.setPackage("com.farsitel.bazaar");
                         startActivity(intent);
                         drawerLayoutContainer.closeDrawer(false);
-                    }catch (Exception e){
-
+                    } catch (Exception e) {
+                        Toast.makeText(LaunchActivity.this, R.string.bazaar_not_available, Toast.LENGTH_SHORT).show();
                     }
                 } else if (position == 12) {
                     SharedPreferences preferences = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", Activity.MODE_PRIVATE);
@@ -1309,8 +1308,8 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
     @Override
     public void didSelectDialog(DialogsActivity dialogsFragment, long dialog_id, boolean param) {
         if (dialog_id != 0) {
-            int lower_part = (int)dialog_id;
-            int high_id = (int)(dialog_id >> 32);
+            int lower_part = (int) dialog_id;
+            int high_id = (int) (dialog_id >> 32);
 
             Bundle args = new Bundle();
             args.putBoolean("scrollToTopOnResume", true);
@@ -1333,7 +1332,7 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
             ChatActivity fragment = new ChatActivity(args);
 
             if (videoPath != null) {
-                if(android.os.Build.VERSION.SDK_INT >= 16) {
+                if (android.os.Build.VERSION.SDK_INT >= 16) {
                     if (AndroidUtilities.isTablet()) {
                         actionBarLayout.presentFragment(fragment, false, true, true);
                     } else {
@@ -1407,7 +1406,7 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
 
     public void needLayout() {
         if (AndroidUtilities.isTablet()) {
-            RelativeLayout.LayoutParams relativeLayoutParams = (RelativeLayout.LayoutParams)layersActionBarLayout.getLayoutParams();
+            RelativeLayout.LayoutParams relativeLayoutParams = (RelativeLayout.LayoutParams) layersActionBarLayout.getLayoutParams();
             relativeLayoutParams.leftMargin = (AndroidUtilities.displaySize.x - relativeLayoutParams.width) / 2;
             int y = (Build.VERSION.SDK_INT >= 21 ? AndroidUtilities.statusBarHeight : 0);
             relativeLayoutParams.topMargin = y + (AndroidUtilities.displaySize.y - relativeLayoutParams.height - y) / 2;
@@ -1943,7 +1942,7 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
         if (AndroidUtilities.isTablet()) {
             drawerLayoutContainer.setAllowOpenDrawer(!(fragment instanceof LoginActivity || fragment instanceof CountrySelectActivity) && layersActionBarLayout.getVisibility() != View.VISIBLE, true);
             if (fragment instanceof DialogsActivity) {
-                DialogsActivity dialogsActivity = (DialogsActivity)fragment;
+                DialogsActivity dialogsActivity = (DialogsActivity) fragment;
                 if (dialogsActivity.isMainDialogList() && layout != actionBarLayout) {
                     actionBarLayout.removeAllFragments();
                     actionBarLayout.presentFragment(fragment, removeLast, forceWithoutAnimation, false);
@@ -2032,7 +2031,7 @@ public class LaunchActivity extends Activity implements ActionBarLayout.ActionBa
         if (AndroidUtilities.isTablet()) {
             drawerLayoutContainer.setAllowOpenDrawer(!(fragment instanceof LoginActivity || fragment instanceof CountrySelectActivity) && layersActionBarLayout.getVisibility() != View.VISIBLE, true);
             if (fragment instanceof DialogsActivity) {
-                DialogsActivity dialogsActivity = (DialogsActivity)fragment;
+                DialogsActivity dialogsActivity = (DialogsActivity) fragment;
                 if (dialogsActivity.isMainDialogList() && layout != actionBarLayout) {
                     actionBarLayout.removeAllFragments();
                     actionBarLayout.addFragmentToStack(fragment);
