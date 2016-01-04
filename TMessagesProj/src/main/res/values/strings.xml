@@ -3,8 +3,8 @@
 
 
 <resources>
-    <string name="AppName">Telegram</string>
-    <string name="AppNameBeta">Telegram Beta</string>
+    <string name="AppName">Tihoogram</string>
+    <string name="AppNameBeta">Tihoogram Beta</string>
     <string name="LanguageName">English</string>
     <string name="LanguageNameInEnglish">English</string>
     <string name="LanguageCode">en</string>

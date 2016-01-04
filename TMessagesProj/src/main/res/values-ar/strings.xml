@@ -3,7 +3,6 @@
 <!--Translation by Khalid Alaraifi-->
 
 <resources>
-    <string name="AppName">تيليجرام</string>
     <string name="AppNameBeta">نسخة تيليجرام التجريبية</string>
     <string name="LanguageName">العربية</string>
     <string name="LanguageNameInEnglish">Arabic</string>
@@ -1033,4 +1032,5 @@
     <string name="updateText">تيليجرام نسخة الأندرويد تم تحديثه. الجديد في نسخة ٣.٢.٢:\n\n- إدارة للذاكرة المخبئية: إمكانية التحكم بالذاكرة المخبئية، حذف محتوى لمحادثة معينة.\n- حذف الذاكرة المخبئية من المجموعات الخارقة والقنوات: الضغط والتعليق عليها ثم تحذفها من الذاكرة.n\- إدارة الملصقات: إعادة ترتيب ملصقاتك بشكل يدوي. ويتزامن الترتيب مع باقي أجهزتك.n\n\للإستزادة عن هذا التحديث من هنا:n\
         https://telegram.org/blog/cache-and-stickers</string>
     <string name="updateBuild">693</string>
+    <string name="AppName">تیهوجرام</string>
 </resources>
