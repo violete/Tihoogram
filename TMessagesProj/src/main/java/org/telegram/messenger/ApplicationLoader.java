@@ -22,6 +22,7 @@ import android.content.pm.PackageInfo;
 import android.content.res.Configuration;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Handler;
 import android.os.PowerManager;
