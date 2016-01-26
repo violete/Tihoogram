@@ -3,7 +3,7 @@
  * It is licensed under GNU GPL v. 2 or later.
  * You should have received a copy of the license in this archive (see LICENSE).
  *
- * Copyright Nikolai Kudashov, 2013-2015.
+ * Copyright Nikolai Kudashov, 2013-2016.
  */
 
 package org.telegram.messenger;
@@ -22,7 +22,6 @@ import android.content.pm.PackageInfo;
 import android.content.res.Configuration;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Handler;
 import android.os.PowerManager;
@@ -334,13 +333,10 @@ public class ApplicationLoader extends Application {
             @Override
             public void run() {
                 if (checkPlayServices()) {
-                    gcm = GoogleCloudMessaging.getInstance(ApplicationLoader.this);
-                    regid = getRegistrationId();
-
-                    if (regid.length() == 0) {
-                        registerInBackground();
-                    } else {
-                        sendRegistrationIdToBackend(false);
+                    if (UserConfig.pushString == null || UserConfig.pushString.length() == 0) {
+                        FileLog.d("tmessages", "GCM Registration not found.");
+                        Intent intent = new Intent(applicationContext, GcmRegistrationIntentService.class);
+                        startService(intent);
                     }
                 } else {
                     FileLog.d("tmessages", "No valid Google Play Services APK found.");

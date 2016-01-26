@@ -69,6 +69,8 @@ android {
             debuggable false
             jniDebuggable false
             signingConfig signingConfigs.release
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
 
         foss {
@@ -98,8 +100,8 @@ android {
     defaultConfig {
         minSdkVersion 9
         targetSdkVersion 23
-        versionCode 695
-        versionName "3.3.2"
+        versionCode 719
+        versionName "3.4.2"
         applicationId "net.violete.telegram"
         multiDexEnabled true
     }
