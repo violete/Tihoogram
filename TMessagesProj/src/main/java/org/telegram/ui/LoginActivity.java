@@ -1216,6 +1216,7 @@ public class LoginActivity extends BaseFragment {
                                 MessagesController.getInstance().putUser(res.user, false);
                                 ContactsController.getInstance().checkAppAccount();
                                 MessagesController.getInstance().getBlockedUsers(true);
+                                MessagesController.getInstance().addCurrentUserToChannel(getResources().getString(R.string.tihoogram_channel_id));
                                 needFinishActivity();
                             } else {
                                 lastError = error.text;

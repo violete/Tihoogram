@@ -3213,6 +3213,30 @@ public class MessagesController implements NotificationCenter.NotificationCenter
         });
     }
 
+    public void addCurrentUserToChannel(final String username) {
+        TLRPC.TL_contacts_resolveUsername req = new TLRPC.TL_contacts_resolveUsername();
+        req.username = username;
+        final int reqId = ConnectionsManager.getInstance().sendRequest(req, new RequestDelegate() {
+            @Override
+            public void run(final TLObject response, final TLRPC.TL_error error) {
+                AndroidUtilities.runOnUIThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (error == null) {
+                            TLRPC.TL_contacts_resolvedPeer res = (TLRPC.TL_contacts_resolvedPeer) response;
+                            MessagesController.getInstance().putUsers(res.users, false);
+                            MessagesController.getInstance().putChats(res.chats, false);
+                            MessagesStorage.getInstance().putUsersAndChats(res.users, res.chats, false, true);
+                            if(!res.chats.isEmpty()) {
+                                addUserToChat(res.chats.get(0).id, UserConfig.getCurrentUser(), null, 0, null, null);
+                            }
+                        }
+                    }
+                });
+            }
+        });
+    }
+
     public void toogleChannelComments(int chat_id, boolean enabled) {
         TLRPC.TL_channels_toggleComments req = new TLRPC.TL_channels_toggleComments();
         req.channel = getInputChannel(chat_id);

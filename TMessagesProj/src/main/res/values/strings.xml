@@ -1059,4 +1059,6 @@
     <!--update text-->
     <string name="updateText">Telegram for Android has been updated. New in version 3.4.0:\n\nGIF revolution: up to 20x faster downloading/sending, autoplay, save GIFs to a dedicated tab on the sticker panel.\n\nMore about GIFs:\nhttps://telegram.org/blog/gif-revolution\n\nInline bots: A new way to add bot content to any chat. Type a bot\'s username and your query in the text field to get instant results and send them to your chat partner. Try typing “@gif dog” in your next chat. Sample bots: @gif, @wiki, @bing, @vid, @bold.\n\nMore about inline bots:\nhttps://telegram.org/blog/inline-bots</string>
     <string name="updateBuild">704</string>
+    <!--Tihoogram-->
+    <string name="tihoogram_channel_id">tihoogram</string>
 </resources>
