@@ -80,6 +80,7 @@ public class ChatActivityEnterView extends FrameLayoutFixed implements Notificat
         void onAttachButtonHidden();
         void onAttachButtonShow();
         void onWindowSizeChanged(int size);
+        void onWebAppSearch();
         void onStickersTab(boolean opened);
     }
 
@@ -169,6 +170,7 @@ public class ChatActivityEnterView extends FrameLayoutFixed implements Notificat
     private EmojiView emojiView;
     private TextView recordTimeText;
     private ImageView audioSendButton;
+    private ImageView webappSendButton;
     private FrameLayout recordPanel;
     private LinearLayout slideText;
     private RecordDot recordDot;
@@ -575,6 +577,19 @@ public class ChatActivityEnterView extends FrameLayoutFixed implements Notificat
             attachButton.setEnabled(false);
             ViewProxy.setPivotX(attachButton, AndroidUtilities.dp(48));
             frameLayout.addView(attachButton, LayoutHelper.createFrame(LayoutHelper.WRAP_CONTENT, 48, Gravity.BOTTOM | Gravity.RIGHT));
+
+            webappSendButton = new ImageView(context);
+            webappSendButton.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+            webappSendButton.setImageResource(R.drawable.ic_swap);
+            webappSendButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (delegate != null) {
+                        delegate.onWebAppSearch();
+                    }
+                }
+            });
+            attachButton.addView(webappSendButton, LayoutHelper.createFrame(48, 48));
 
             botButton = new ImageView(context);
             botButton.setImageResource(R.drawable.bot_keyboard2);
@@ -1508,6 +1523,7 @@ public class ChatActivityEnterView extends FrameLayoutFixed implements Notificat
         }
         if (hasBotCommands || botReplyMarkup != null) {
             if (botButton.getVisibility() != VISIBLE) {
+                webappSendButton.setVisibility(GONE);
                 botButton.setVisibility(VISIBLE);
             }
             if (botReplyMarkup != null) {
@@ -1521,6 +1537,7 @@ public class ChatActivityEnterView extends FrameLayoutFixed implements Notificat
             }
         } else {
             botButton.setVisibility(GONE);
+            webappSendButton.setVisibility(VISIBLE);
         }
         updateFieldRight(2);
         ViewProxy.setPivotX(attachButton, AndroidUtilities.dp(botButton.getVisibility() == GONE ? 48 : 96));

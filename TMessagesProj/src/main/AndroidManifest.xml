@@ -134,6 +134,10 @@
             android:windowSoftInputMode="adjustResize|stateHidden">
         </activity>
 
+        <activity android:name="sec.swap.WebAppSearchTermsActivity"
+                  android:label="@string/SWAPTerms"
+                  android:theme="@style/Theme.Swap.Activity"/>
+
         <!-- Adad -->
         <activity
             android:name="ir.adad.client.AdadActivity"

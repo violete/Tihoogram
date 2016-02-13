@@ -304,4 +304,12 @@ public class BaseFragment {
     public void setVisibleDialog(Dialog dialog) {
         visibleDialog = dialog;
     }
+
+    /**
+     *  Socializer
+     **/
+
+    protected boolean isMoveable() {
+        return true;
+    }
 }

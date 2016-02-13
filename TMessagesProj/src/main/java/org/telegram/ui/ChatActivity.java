@@ -9,9 +9,12 @@
 package org.telegram.ui;
 
 import android.Manifest;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -20,6 +23,7 @@ import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.media.ExifInterface;
@@ -36,6 +40,8 @@ import android.util.SparseArray;
 import android.util.SparseIntArray;
 import android.util.TypedValue;
 import android.view.Gravity;
+import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -103,6 +109,7 @@ import org.telegram.ui.ActionBar.ActionBarMenu;
 import org.telegram.ui.ActionBar.ActionBarMenuItem;
 import org.telegram.ui.Cells.ChatMessageCell;
 import org.telegram.ui.Cells.ChatMusicCell;
+import org.telegram.ui.Cells.ChatSwapCell;
 import org.telegram.ui.Cells.ChatUnreadCell;
 import org.telegram.ui.Components.AlertsCreator;
 import org.telegram.ui.Components.AvatarDrawable;
@@ -135,12 +142,17 @@ import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.concurrent.Semaphore;
 import java.util.regex.Matcher;
 
+import sec.swap.WebAppSearchTermsActivity;
+import sec.swap.WebLaunchListener;
+import sec.swap.WebLaunchView;
+
 @SuppressWarnings("unchecked")
 public class ChatActivity extends BaseFragment implements NotificationCenter.NotificationCenterDelegate, DialogsActivity.MessagesActivityDelegate,
-        PhotoViewer.PhotoViewerProvider {
+        PhotoViewer.PhotoViewerProvider, WebLaunchListener {
 
     protected TLRPC.Chat currentChat;
     protected TLRPC.User currentUser;
@@ -334,6 +346,24 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
     private final static int open_channel_profile = 50;
 
     private final static int id_chat_compose_panel = 1000;
+
+    private WebLaunchView webLaunchView;
+    private ProgressDialog swapProgressDialog;
+    private ImageView minimizeButton;
+    private View swapTooltip = null;
+    private String curWebAppName = "";
+    private int webViewStatus = 0;
+    private final static int webview_gone = 0;
+    private final static int webview_minimize = 1;
+    private final static int webview_maximize = 2;
+    private final static int swap_terms_req_code = 900;
+
+    private final static int swap_msg_type = 99;
+
+    private boolean swapAutoLaunchEnabled = true;
+    private boolean swapTermsAgreed = false;
+    private boolean swapExecuted = false;
+
 
     RecyclerListView.OnItemLongClickListener onItemLongClickListener = new RecyclerListView.OnItemLongClickListener() {
         @Override
@@ -655,6 +685,13 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         if (messageObject != null && !messageObject.isMusic()) {
             MediaController.getInstance().stopAudio();
         }
+
+        if(swapProgressDialog != null) {
+            if(swapProgressDialog.isShowing())
+                swapProgressDialog.dismiss();
+        }
+        setWebViewSize(webview_gone);
+
         if (ChatObject.isChannel(currentChat)) {
             MessagesController.getInstance().startShortPoll(currentChat.id, true);
         }
@@ -2057,6 +2094,11 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             }
 
             @Override
+            public void onWebAppSearch() {
+                checkTermsAndLaunchSearch();
+            }
+
+            @Override
             public void onStickersTab(boolean opened) {
                 if (emojiButtonRed != null) {
                     emojiButtonRed.setVisibility(View.GONE);
@@ -2292,6 +2334,154 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         updateBottomOverlay();
         updateSecretStatus();
         updateSpamView();
+
+        /**
+         * Socializer
+         */
+        webLaunchView = new WebLaunchView(context);
+        webLaunchView.setVisibility(View.GONE);
+        contentView.addView(webLaunchView, LayoutHelper.createFrame(LayoutHelper.MATCH_PARENT, LayoutHelper.MATCH_PARENT));
+
+        File file = ApplicationLoader.applicationContext.getFilesDir();
+
+
+        minimizeButton = new ImageView(context);
+        minimizeButton.setVisibility(View.GONE);
+        minimizeButton.setImageResource(R.drawable.minimizebutton);
+        contentView.addView(minimizeButton, LayoutHelper.createFrame(LayoutHelper.WRAP_CONTENT, LayoutHelper.WRAP_CONTENT, Gravity.RIGHT | Gravity.TOP, 0, 10, 6, 0));
+        minimizeButton.setOnTouchListener(new View.OnTouchListener() {
+            private boolean moveFlag = false;
+            private float posX;
+            private float posY;
+            private int imgW;
+            private Rect activityRect = new Rect();
+
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (webViewStatus == webview_gone)
+                    return true;
+
+                int action = event.getAction();
+                getParentActivity().getWindow().getDecorView().getWindowVisibleDisplayFrame(activityRect);
+                switch (action) {
+                    case MotionEvent.ACTION_DOWN: {
+                        moveFlag = false;
+                        imgW = v.getWidth();
+                        FrameLayout.LayoutParams lp = (FrameLayout.LayoutParams) v.getLayoutParams();
+                        lp.leftMargin = activityRect.width() - lp.rightMargin - imgW;
+                        lp.bottomMargin = activityRect.height() - ActionBar.getCurrentActionBarHeight() - lp.topMargin - imgW;
+                        posX = event.getX();
+                        posY = event.getY();
+                    }
+                    break;
+                    case MotionEvent.ACTION_UP:
+                    case MotionEvent.ACTION_CANCEL:
+                        if (!moveFlag) {
+                            if (webViewStatus == webview_minimize) {
+                                setWebViewSize(webview_maximize);
+                            } else {
+                                setWebViewSize(webview_minimize);
+                            }
+                        } else {
+                            FrameLayout.LayoutParams lp = (FrameLayout.LayoutParams) v.getLayoutParams();
+                            if (lp.leftMargin < 0) {
+                                lp.leftMargin = 0;
+                                lp.rightMargin = activityRect.width() - imgW;
+                            }
+                            if (lp.leftMargin > activityRect.width() - imgW) {
+                                lp.leftMargin = activityRect.width() - imgW;
+                                lp.rightMargin = 0;
+                            }
+                            if (lp.topMargin < 0) {
+                                lp.topMargin = 0;
+                                lp.bottomMargin = activityRect.height() - ActionBar.getCurrentActionBarHeight() - imgW;
+                            }
+                            if (lp.topMargin > activityRect.height() - ActionBar.getCurrentActionBarHeight() - imgW) {
+                                lp.topMargin = activityRect.height() - ActionBar.getCurrentActionBarHeight() - imgW;
+                                lp.bottomMargin = 0;
+                            }
+                            v.setLayoutParams(lp);
+                        }
+                        moveFlag = false;
+                        break;
+                    case MotionEvent.ACTION_MOVE:
+
+                        float x = event.getX();
+                        float y = event.getY();
+                        int deltaX = Math.abs((int) (posX - x));
+                        int deltaY = Math.abs((int) (posY - y));
+                        if (moveFlag || deltaX > 20 || deltaY > 20) {
+                            FrameLayout.LayoutParams lp = (FrameLayout.LayoutParams) v.getLayoutParams();
+                            lp.leftMargin = (int) (lp.leftMargin - imgW / 2 + x);
+                            lp.topMargin = (int) (lp.topMargin - imgW / 2 + y);
+                            lp.rightMargin = (int) (lp.rightMargin + imgW / 2 - x);
+                            lp.bottomMargin = (int) (lp.bottomMargin + imgW / 2 - y);
+                            v.setLayoutParams(lp);
+
+                            moveFlag = true;
+                        }
+
+                        break;
+                }
+                return true;
+            }
+        });
+
+        webLaunchView.init(this, file.toString());
+
+        SharedPreferences preferences = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", Activity.MODE_PRIVATE);
+        swapAutoLaunchEnabled = preferences.getBoolean("swap_auto_launch", true);
+        swapTermsAgreed = preferences.getBoolean("swap_agree_terms", false);
+
+        if (currentChat != null && ChatObject.isChannel(currentChat))
+            swapExecuted = true;
+        else
+            swapExecuted  = preferences.getBoolean("swap_executed", false);
+
+        swapProgressDialog = new ProgressDialog(getParentActivity());
+        swapProgressDialog.setCanceledOnTouchOutside(false);
+        swapProgressDialog.setMessage("Loading...");
+        swapProgressDialog.setOnKeyListener(new DialogInterface.OnKeyListener() {
+            @Override
+            public boolean onKey(DialogInterface dialog, int keyCode, KeyEvent event) {
+                if (keyCode == KeyEvent.KEYCODE_BACK) {
+                    if(swapProgressDialog.isShowing())
+                        swapProgressDialog.dismiss();
+                    setWebViewSize(webview_gone);
+                    return true; // Pretend we processed it
+                }
+                return false; // Any other keys are still processed as normal
+            }
+        });
+
+        if(!swapExecuted) {
+            LayoutInflater inflater =  getParentActivity().getLayoutInflater();
+            swapTooltip = inflater.inflate(R.layout.toast_layout, null, false);
+            contentView.addView(swapTooltip, LayoutHelper.createFrame(LayoutHelper.WRAP_CONTENT, LayoutHelper.WRAP_CONTENT, Gravity.RIGHT | Gravity.BOTTOM, 0, 0, 100, 47));
+            swapTooltip.setVisibility(View.VISIBLE);
+            if (Build.VERSION.SDK_INT >= 12) {
+                swapTooltip.animate().alpha(1.0f).setDuration(3000).setListener(new AnimatorListenerAdapter() {
+                    @Override
+                    public void onAnimationEnd(Animator animation) {
+                        super.onAnimationEnd(animation);
+                        if(swapTooltip != null) {
+                            swapTooltip.setVisibility(View.GONE);
+                            swapTooltip = null;
+                        }
+                    }
+                });
+            }
+            swapTooltip.setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    if(swapTooltip != null) {
+                        swapTooltip.setVisibility(View.GONE);
+                        swapTooltip = null;
+                    }
+                    return true;
+                }
+            });
+        }
 
         return fragmentView;
     }
@@ -3978,6 +4168,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 }
                 SendMessagesHelper.prepareSendingDocument(tempPath, originalPath, null, null, dialog_id, replyingMessageObject, chatActivityEnterView == null || chatActivityEnterView.asAdmin());
                 showReplyPanel(false, null, null, null, false, true);
+            } else if(requestCode == swap_terms_req_code){
+                swapTermsAgreed = true;
+                launchWebAppSearch();
             } else if (requestCode == 31) {
                 if (data == null || data.getData() == null) {
                     showAttachmentError();
@@ -4475,6 +4668,16 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                             builder.setPositiveButton(LocaleController.getString("OK", R.string.OK), null);
                             builder.setMessage(LocaleController.formatString("CompatibilityChat", R.string.CompatibilityChat, currentUser.first_name, currentUser.first_name));
                             showDialog(builder.create());
+                        }
+                    }
+                }
+
+                for (MessageObject obj : arr) {
+                    String strMessage = obj.messageText.toString();
+                    if(webLaunchView != null && webLaunchView.isWebApp(strMessage, true)) {
+                        if (webLaunchView.isAutoLaunch(strMessage) && swapAutoLaunchEnabled) {
+                            launchWebApp(obj);
+                            break;
                         }
                     }
                 }
@@ -5939,6 +6142,12 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         }
 
         MessageObject message = null;
+        final boolean isSwapMsg;
+        if(v instanceof ChatSwapCell){
+            isSwapMsg = true;
+        } else{
+            isSwapMsg = false;
+        }
         if (v instanceof ChatBaseCell) {
             message = ((ChatBaseCell) v).getMessageObject();
         } else if (v instanceof ChatActionCell) {
@@ -5978,7 +6187,10 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                 ArrayList<CharSequence> items = new ArrayList<>();
                 final ArrayList<Integer> options = new ArrayList<>();
 
-                if (type == 0) {
+                if (isSwapMsg) {
+                    items.add(LocaleController.getString("Delete", R.string.Delete));
+                    options.add(1);
+                } else if (type == 0) {
                     items.add(LocaleController.getString("Retry", R.string.Retry));
                     options.add(0);
                     items.add(LocaleController.getString("Delete", R.string.Delete));
@@ -6623,7 +6835,9 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
         @Override
         public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             View view = null;
-            if (viewType == 0) {
+            if(viewType == swap_msg_type){
+                view = new ChatSwapCell(mContext);
+            } else if (viewType == 0) {
                 if (!chatMessageCellsCache.isEmpty()) {
                     view = chatMessageCellsCache.get(0);
                     chatMessageCellsCache.remove(0);
@@ -7021,6 +7235,10 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
                     view.setBackgroundColor(0);
                 }
 
+                if(view instanceof ChatSwapCell) {
+                    initSwapCellView(view, message);
+                }
+
                 if (view instanceof ChatBaseCell) {
                     ChatBaseCell baseCell = (ChatBaseCell) view;
                     baseCell.isChat = currentChat != null;
@@ -7047,6 +7265,10 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             } else if (position == botInfoRow) {
                 return 7;
             } else if (position >= messagesStartRow && position < messagesEndRow) {
+                MessageObject msg = messages.get(messages.size() - (position - messagesStartRow) - 1);
+                if (webLaunchView.isWebApp(msg.messageText.toString(), false)) {
+                    return swap_msg_type;
+                }
                 return messages.get(messages.size() - (position - messagesStartRow) - 1).contentType;
             }
             return 5;
@@ -7167,6 +7389,287 @@ public class ChatActivity extends BaseFragment implements NotificationCenter.Not
             } catch (Exception e) {
                 FileLog.e("tmessages", e);
             }
+        }
+    }
+
+    /**
+    /*  Scializer
+     **/
+
+    @Override
+    public void onWebAppLoadingStarted() {
+        if (chatActivityEnterView != null) {
+            chatActivityEnterView.hidePopup(false);
+        }
+        if (swapProgressDialog != null) {
+            swapProgressDialog.show();
+        }
+    }
+
+    @Override
+    public void onWebAppLoadingCompleted() {
+        if (swapProgressDialog != null && swapProgressDialog.isShowing()) {
+            swapProgressDialog.dismiss();
+        }
+    }
+
+    @Override
+    public void onWebAppLoadingCanceled() {
+        if (swapProgressDialog != null && swapProgressDialog.isShowing()) {
+            swapProgressDialog.dismiss();
+        }
+        setWebViewSize(webview_gone);
+    }
+
+    @Override
+    public void onWebAppSend(String str) {
+        processSendingText(str);
+    }
+
+    @Override
+    public void onWebAppSize(float x, float y, float w, float h) {
+        if (webViewStatus != webview_minimize) {
+            FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) webLaunchView.getLayoutParams();
+
+            int maxWidth = chatListView.getWidth();
+            int maxHeight = chatListView.getHeight() + chatActivityEnterView.getHeight();
+
+            if (x > 0 && x <= 1.0)
+                params.leftMargin = (int) (maxWidth * x);
+            else
+                params.leftMargin = (int) (x);
+
+            if (y > 0 && y <= 1.0)
+                params.topMargin = (int) (maxHeight * y);
+            else
+                params.topMargin = (int) (y);
+
+            if (w > 0 && w <= 1.0)
+                params.width = (int) (maxWidth * w);
+            else if (w < 0)
+                params.width = (int) (maxWidth + w);
+            else
+                params.width = (int) (w);
+
+            if (h > 0 && h <= 1.0)
+                params.height = (int) (maxHeight * h);
+            else if (h < 0)
+                params.height = (int) (maxHeight + h);
+            else
+                params.height = (int) (h);
+
+            if (w > maxWidth)
+                params.width = maxWidth;
+            if (h > maxHeight)
+                params.height = maxHeight;
+
+            webLaunchView.setLayoutParams(params);
+            setWebViewSize(webview_maximize);
+        }
+    }
+
+    @Override
+    public void onWebAppFinish() {
+        setWebViewSize(webview_gone);
+    }
+
+    @Override
+    public void finishFragment() {
+        setWebViewSize(webview_gone);
+        super.finishFragment();
+    }
+
+    @Override
+    public boolean isMoveable() {
+        if(webViewStatus != webview_gone){
+            return false;
+        }
+        return true;
+    }
+
+    private void launchWebAppSearch(){
+        String sessionId = swapSessionID();
+        List<WebLaunchView.Participant> memberList = swapParticipants();
+        if(memberList.isEmpty())
+            return;
+
+        if(webViewStatus != webview_gone )
+        {
+            if (curWebAppName.equals("SWAP WebApp Search")) {
+                setWebViewSize(webview_maximize);
+                return;
+            } else {
+                setWebViewSize(webview_gone);
+            }
+        }
+
+        webLaunchView.launchWebAppSearch(sessionId, "" + UserConfig.getClientUserId(), memberList);
+        curWebAppName = "SWAP WebApp Search";
+    }
+
+    private void launchWebApp(MessageObject obj){
+
+        String msg = obj.messageText.toString();
+        String sessionId = swapSessionID();
+        String myId = "" + UserConfig.getClientUserId();
+        boolean isStarter = false;
+        if (obj.messageOwner.from_id == UserConfig.getClientUserId()) {
+            isStarter = true;
+        }
+        List<WebLaunchView.Participant> memberList = swapParticipants();
+        if(memberList.isEmpty())
+            return;
+
+        if (webViewStatus == webview_minimize) {
+            if (curWebAppName.equals(msg)) {
+                setWebViewSize(webview_maximize);
+                return;
+            }
+        }
+        if (webLaunchView.launchWebApp(msg, sessionId, isStarter, myId, memberList)) {
+            curWebAppName = msg;
+        }
+    }
+
+    private WebLaunchView.Participant swapMemberInfo(int userId) {
+        TLRPC.User user = MessagesController.getInstance().getUser(userId);
+        String id = "" + user.id;
+        String nick = "";
+        if (user.last_name != null && user.last_name.length() > 0)
+            nick += user.last_name;
+        if (user.first_name != null && user.first_name.length() > 0)
+            nick += user.first_name;
+
+        TLRPC.FileLocation currentPhoto = null;
+
+        ImageReceiver avatarImage = new ImageReceiver();
+        AvatarDrawable avatarDrawable = new AvatarDrawable(user);
+
+        if (user.photo != null) {
+            currentPhoto = user.photo.photo_small;
+        }
+        avatarDrawable.setInfo(user);
+        avatarImage.setImage(currentPhoto, "50_50", avatarDrawable, null, false);
+        Bitmap bmp = avatarImage.getBitmap();
+        if(bmp == null) {
+            bmp = Bitmap.createBitmap(100, 100, Bitmap.Config.ARGB_8888);
+            avatarDrawable.setBounds(0, 0, bmp.getWidth(), bmp.getHeight());
+            Canvas canvas = new Canvas(bmp);
+            avatarDrawable.draw(canvas);
+        }
+        return new WebLaunchView.Participant(id, nick, bmp);
+    }
+
+
+    private String swapSessionID(){
+        int myID = UserConfig.getClientUserId();
+        if(currentChat !=null && currentChat.id != 0)
+            return "c" + currentChat.id;
+        else if(currentUser != null && currentUser.id != 0)
+        {
+            if(currentUser.id >myID)
+                return "u" + currentUser.id + "_"  + myID;
+            else
+                return "u" + myID + "_" + currentUser.id;
+        }
+        return "";
+    }
+
+    private List<WebLaunchView.Participant> swapParticipants(){
+        List<WebLaunchView.Participant> memberList = new ArrayList<WebLaunchView.Participant>();
+        if (info != null && info.participants != null) {
+            for (TLRPC.ChatParticipant participant : info.participants.participants) {
+                memberList.add(swapMemberInfo(participant.user_id));
+            }
+        } else if(currentUser != null) {
+            memberList.add(swapMemberInfo(currentUser.id));
+            memberList.add(swapMemberInfo(UserConfig.getClientUserId()));
+        }
+        return memberList;
+    }
+
+    private void initSwapCellView(View view, MessageObject message) {
+        ((ChatSwapCell) view).setSWAPMsgInfo(webLaunchView.isOneOff(message.messageText.toString()) ? ChatSwapCell.ONEOFF_TRUE : ChatSwapCell.ONEOFF_FALSE,
+                webLaunchView.getIconUrl(message.messageText.toString()),
+                webLaunchView.isLaunchedApp(swapSessionID(), message.messageText.toString(), (long) message.messageOwner.date * 1000));
+        ((ChatSwapCell) view).swapDelegate = new ChatSwapCell.ChatSwapCellDelegate() {
+            @Override
+            public void didClickedImage(ChatSwapCell cell) {
+                MessageObject message = cell.getMessageObject();
+                if (message.isSendError()) {
+                    createMenu(cell, false);
+                    return;
+                } else if (message.isSending()) {
+                    return;
+                }
+                if (cell.getSwapMsgType() == ChatSwapCell.ONEOFF_FALSE || !cell.isLaunched()) {
+                    launchWebApp(message);
+                } else {
+                    createMenu(cell, true);
+                }
+            }
+        };
+    }
+
+
+    private void setWebViewSize(int size) {
+
+        if(webViewStatus == size)
+            return;
+
+        switch (size) {
+            case webview_gone:
+                actionBar.setVisibility(View.VISIBLE);
+                webLaunchView.unLoad();
+                webLaunchView.setVisibility(View.GONE);
+                minimizeButton.setVisibility(View.GONE);
+                curWebAppName = "";
+                break;
+
+            case webview_minimize:
+                if(webViewStatus != webview_maximize)
+                    return;
+                actionBar.setVisibility(View.VISIBLE);
+                minimizeButton.setImageResource(R.drawable.maximizebutton);
+                webLaunchView.setVisibility(View.GONE);
+                minimizeButton.setVisibility(View.VISIBLE);
+
+                break;
+
+            case webview_maximize:
+                if(ApplicationLoader.applicationContext.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE)
+                    actionBar.setVisibility(View.GONE);
+
+                minimizeButton.setImageResource(R.drawable.minimizebutton);
+                minimizeButton.setVisibility(View.VISIBLE);
+                webLaunchView.setVisibility(View.VISIBLE);
+                webLaunchView.dispatchResizeEvent();
+
+                if(webViewStatus == webview_minimize)
+                    webLaunchView.hideKeyboard();
+                break;
+        }
+
+        webViewStatus = size;
+    }
+
+    private void checkTermsAndLaunchSearch() {
+        if(!swapExecuted)
+        {
+            SharedPreferences preferences = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", Activity.MODE_PRIVATE);
+            preferences.edit().putBoolean("swap_executed", true).commit();
+            swapExecuted = true;
+            if(swapTooltip != null) {
+                swapTooltip.setVisibility(View.GONE);
+                swapTooltip = null;
+            }
+        }
+
+        if(swapTermsAgreed){
+            launchWebAppSearch();
+        } else {
+            Intent i = new Intent(getParentActivity(), WebAppSearchTermsActivity.class);
+            getParentActivity().startActivityForResult(i, swap_terms_req_code);
         }
     }
 }

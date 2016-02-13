@@ -25,8 +25,11 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Outline;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.NonNull;
 import android.text.Html;
 import android.text.Spannable;
@@ -42,6 +45,8 @@ import android.view.ViewOutlineProvider;
 import android.view.ViewTreeObserver;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
+import android.webkit.CookieManager;
+import android.webkit.WebView;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.FrameLayout;
@@ -50,6 +55,14 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import org.apache.http.HttpResponse;
+import org.apache.http.HttpStatus;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.params.HttpConnectionParams;
+import org.apache.http.protocol.HTTP;
+import org.apache.http.util.EntityUtils;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationCompat.AnimatorListenerAdapterProxy;
 import org.telegram.messenger.AnimationCompat.AnimatorSetProxy;
@@ -95,6 +108,7 @@ import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.NumberPicker;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Locale;
 
@@ -153,6 +167,34 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
 
     private final static int edit_name = 1;
     private final static int logout = 2;
+
+    // Socializer
+    private int swapSectionTopArea;
+    private int swapSection;
+    private int swapEnableAutoLaunchRow;
+    private int swapDeleteCacheRow;
+    private int swapHomepageRow;
+    private int swapDeleteFilesRow;
+
+    private int swapVersion;
+    private String latestVersion = "Loading..";
+    private boolean isLatestVersion = false;
+    TextSettingsCell swapVersionCell = null;
+
+    class EventHandler extends Handler {
+        public void handleMessage(Message msg) {
+            if(swapVersionCell != null) {
+                String cur = getCurVersion();
+                swapVersionCell.setText(LocaleController.getString("Version", R.string.CurrentVersion) + " : " + cur
+                        + "   " + LocaleController.getString("Version", R.string.LatestVersion) + " : " + latestVersion, true);
+                if (cur.equals(latestVersion)) {
+                    isLatestVersion = true;
+                }
+            }
+        }
+    }
+
+    private EventHandler eventHandler = new EventHandler();
 
     private static class LinkMovementMethodMy extends LinkMovementMethod {
         @Override
@@ -231,6 +273,14 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
         numberSectionRow = rowCount++;
         numberRow = rowCount++;
         usernameRow = rowCount++;
+
+        swapSectionTopArea = rowCount++;
+        swapSection = rowCount++;
+        swapEnableAutoLaunchRow = rowCount++;
+        swapDeleteCacheRow = rowCount++;
+        swapDeleteFilesRow = rowCount++;
+        swapHomepageRow = rowCount++;
+
         settingsSectionRow = rowCount++;
         settingsSectionRow2 = rowCount++;
         notificationRow = rowCount++;
@@ -257,6 +307,9 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
         supportSectionRow2 = rowCount++;
         askQuestionRow = rowCount++;
         telegramFaqRow = rowCount++;
+
+        swapVersion = rowCount++;
+
         if (BuildVars.DEBUG_VERSION) {
             sendLogsRow = rowCount++;
             clearLogsRow = rowCount++;
@@ -613,8 +666,63 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
                     presentFragment(new ChangeUsernameActivity());
                 } else if (i == numberRow) {
                     presentFragment(new ChangePhoneHelpActivity());
+                }  else if (i == swapEnableAutoLaunchRow) {
+                    SharedPreferences preferences = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", Activity.MODE_PRIVATE);
+                    boolean swap = preferences.getBoolean("swap_auto_launch", true);
+                    SharedPreferences.Editor editor = preferences.edit();
+                    editor.putBoolean("swap_auto_launch", !swap);
+                    editor.commit();
+                    if (listView != null) {
+                        listView.invalidateViews();
+                    }
+                } else if (i == swapDeleteCacheRow) {
+                    if (getParentActivity() == null) {
+                        return;
+                    }
+
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
+                    builder.setTitle("Clear Web Cache");
+                    builder.setMessage("Are you sure you want to clear web cache?");
+                    builder.setPositiveButton(LocaleController.getString("Delete", R.string.Delete), new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            swapDeleteCache();
+                        }
+                    });
+                    builder.setNegativeButton(LocaleController.getString("Cancel", R.string.Cancel), null);
+                    showDialog(builder.create());
+                } else if (i == swapHomepageRow) {
+                    try {
+
+                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(LocaleController.getString("SWAPFaqUrl", R.string.SWAPFaqUrl)));
+                        getParentActivity().startActivity(intent);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                } else if (i == swapDeleteFilesRow) {
+                    if (getParentActivity() == null) {
+                        return;
+                    }
+
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
+                    builder.setTitle("Clear File Cache");
+                    builder.setMessage("Are you sure you want to clear all cached files?");
+                    builder.setPositiveButton(LocaleController.getString("Delete", R.string.Delete), new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            swapDeleteFile(new File(ApplicationLoader.applicationContext.getFilesDir().getAbsolutePath() + "/swap"));
+                        }
+                    });
+                    builder.setNegativeButton(LocaleController.getString("Cancel", R.string.Cancel), null);
+                    showDialog(builder.create());
                 } else if (i == stickersRow) {
                     presentFragment(new StickersActivity());
+                } else if (i == swapVersion) {
+                    if (!isLatestVersion) {
+                        Intent intent = new Intent(Intent.ACTION_VIEW);
+                        intent.setData(Uri.parse("market://details?id=org.telegram.socializer.messenger"));
+                        getParentActivity().startActivity(intent);
+                    }
                 } else if (i == cacheRow) {
                     presentFragment(new CacheControlActivity());
                 }
@@ -1127,7 +1235,8 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
                     i == askQuestionRow || i == sendLogsRow || i == sendByEnterRow || i == autoplayGifsRow || i == privacyRow || i == wifiDownloadRow ||
                     i == mobileDownloadRow || i == clearLogsRow || i == roamingDownloadRow || i == languageRow || i == usernameRow ||
                     i == switchBackendButtonRow || i == telegramFaqRow || i == contactsSortRow || i == contactsReimportRow || i == saveToGalleryRow ||
-                    i == stickersRow || i == cacheRow;
+                    i == stickersRow || i == swapEnableAutoLaunchRow || i == swapDeleteCacheRow || i == swapHomepageRow || i == swapDeleteFilesRow ||
+                    i == swapVersion || i == cacheRow;
         }
 
         @Override
@@ -1207,8 +1316,23 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
                     textCell.setText(LocaleController.getString("TelegramFAQ", R.string.TelegramFaq), true);
                 } else if (i == contactsReimportRow) {
                     textCell.setText(LocaleController.getString("ImportContacts", R.string.ImportContacts), true);
+                } else if (i == swapDeleteCacheRow) {
+                    textCell.setText("Clear Web Cache", true);
+                } else if (i == swapHomepageRow) {
+                    textCell.setText("About SWAP", true);
+                } else if (i == swapDeleteFilesRow) {
+                    textCell.setText("Clear File Cache", true);
                 } else if (i == stickersRow) {
                     textCell.setText(LocaleController.getString("Stickers", R.string.Stickers), true);
+                } else if(i == swapVersion) {
+                    swapVersionCell = textCell;
+                    String cur = getCurVersion();
+                    swapVersionCell.setText(LocaleController.getString("Version", R.string.CurrentVersion) + " : " + cur
+                            + "   " + LocaleController.getString("Version", R.string.LatestVersion) + " : "
+                            + latestVersion, true);
+                    if (cur.equals(latestVersion)) {
+                        isLatestVersion = true;
+                    }
                 } else if (i == cacheRow) {
                     textCell.setText(LocaleController.getString("CacheSettings", R.string.CacheSettings), true);
                 }
@@ -1225,6 +1349,8 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
                     textCell.setTextAndCheck(LocaleController.getString("SendByEnter", R.string.SendByEnter), preferences.getBoolean("send_by_enter", false), false);
                 } else if (i == saveToGalleryRow) {
                     textCell.setTextAndCheck(LocaleController.getString("SaveToGallerySettings", R.string.SaveToGallerySettings), MediaController.getInstance().canSaveToGallery(), false);
+                } else if (i == swapEnableAutoLaunchRow) {
+                    textCell.setTextAndCheck("Enable Auto Launch", preferences.getBoolean("swap_auto_launch", true), true);
                 } else if (i == autoplayGifsRow) {
                     textCell.setTextAndCheck(LocaleController.getString("AutoplayGifs", R.string.AutoplayGifs), MediaController.getInstance().canAutoplayGifs(), true);
                 }
@@ -1242,6 +1368,8 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
                     ((HeaderCell) view).setText(LocaleController.getString("AutomaticMediaDownload", R.string.AutomaticMediaDownload));
                 } else if (i == numberSectionRow) {
                     ((HeaderCell) view).setText(LocaleController.getString("Info", R.string.Info));
+                } else if (i == swapSection) {
+                    ((HeaderCell) view).setText("Social Web App Platform");
                 }
             } else if (type == 5) {
                 if (view == null) {
@@ -1340,18 +1468,17 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
         public int getItemViewType(int i) {
             if (i == emptyRow || i == overscrollRow) {
                 return 0;
-            }
-            if (i == settingsSectionRow || i == supportSectionRow || i == messagesSectionRow || i == mediaDownloadSection || i == contactsSectionRow) {
+            } if (i == settingsSectionRow || i == supportSectionRow || i == messagesSectionRow || i == mediaDownloadSection || i == contactsSectionRow || i == swapSectionTopArea) {
                 return 1;
-            } else if (i == enableAnimationsRow || i == sendByEnterRow || i == saveToGalleryRow || i == autoplayGifsRow) {
+            } else if (i == enableAnimationsRow || i == sendByEnterRow || i == saveToGalleryRow || i == swapEnableAutoLaunchRow) {
                 return 3;
-            } else if (i == notificationRow || i == backgroundRow || i == askQuestionRow || i == sendLogsRow || i == privacyRow || i == clearLogsRow || i == switchBackendButtonRow || i == telegramFaqRow || i == contactsReimportRow || i == textSizeRow || i == languageRow || i == contactsSortRow || i == stickersRow || i == cacheRow) {
+            } else if (i == notificationRow || i == backgroundRow || i == askQuestionRow || i == sendLogsRow || i == privacyRow || i == clearLogsRow || i == switchBackendButtonRow || i == telegramFaqRow || i == contactsReimportRow || i == textSizeRow || i == languageRow || i == contactsSortRow || i == swapDeleteCacheRow || i == swapHomepageRow || i == swapDeleteFilesRow || i == stickersRow || i == swapVersion || i == cacheRow) {
                 return 2;
             } else if (i == versionRow) {
                 return 5;
             } else if (i == wifiDownloadRow || i == mobileDownloadRow || i == roamingDownloadRow || i == numberRow || i == usernameRow) {
                 return 6;
-            } else if (i == settingsSectionRow2 || i == messagesSectionRow2 || i == supportSectionRow2 || i == numberSectionRow || i == mediaDownloadSection2) {
+            } else if (i == settingsSectionRow2 || i == messagesSectionRow2 || i == supportSectionRow2 || i == numberSectionRow || i == mediaDownloadSection2 || i == swapSection) {
                 return 4;
             } else {
                 return 2;
@@ -1367,5 +1494,88 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
         public boolean isEmpty() {
             return false;
         }
+    }
+
+    /**
+     * Socializer
+     */
+    private void swapDeleteCache() {
+        WebView view = new WebView(getParentActivity());
+        view.clearCache(true);
+        view.clearHistory();
+        view.clearFormData();
+        CookieManager cookieManager = CookieManager.getInstance();
+        cookieManager.setAcceptCookie(true);
+        cookieManager.removeAllCookie();
+    }
+
+    private void swapDeleteFile(File path) {
+        try {
+            File[] files = path.listFiles();
+
+            for (File f : files) {
+                if (f.isFile()) {
+                    f.delete();
+                } else {
+                    if(f.toString().equals(path + "/invalid")){
+                        swapDeleteFile(f);
+                    }
+                }
+            }
+
+            File cache = AndroidUtilities.getCacheDir();
+            for(File f : cache.listFiles()){
+                if(f.isFile()){
+                    f.delete();
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    private String getCurVersion(){
+        try{
+            PackageInfo packageInfo = getParentActivity().getPackageManager().getPackageInfo(getParentActivity().getPackageName(), 0);
+            return packageInfo.versionName;
+        } catch (Exception e){
+            e.printStackTrace();
+            return "";
+        }
+    }
+
+    private void getLatestVersion() {
+        new AsyncTask<Void, Void, Void>() {
+
+            @Override
+            protected Void doInBackground(Void... params) {
+                HttpClient client = new DefaultHttpClient();
+                HttpConnectionParams.setConnectionTimeout(client.getParams(), 3000);
+                HttpGet httpGet = new HttpGet("http://swap.sec.net/api/search/apk_version");
+
+                HttpResponse response = null;
+                try {
+                    response = client.execute(httpGet);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    return null;
+                } catch (IllegalArgumentException e) {
+                    e.printStackTrace();
+                    return null;
+                }
+
+                if (response.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
+                    try {
+                        latestVersion = EntityUtils.toString(response.getEntity(), HTTP.UTF_8);
+                        eventHandler.sendMessage(Message.obtain(eventHandler, 0, 0, 0, null));
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+                return null;
+
+            }
+        }.execute();
     }
 }

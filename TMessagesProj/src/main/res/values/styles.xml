@@ -77,4 +77,19 @@
         <item name="android:windowExitAnimation">@anim/no_animation</item>
     </style>
 
+    <style name="Theme.Swap.Activity" parent="Theme.TMessages.Start">
+        <item name="android:actionBarStyle">@style/Theme.Swap.ActionBar</item>
+
+    </style>
+
+
+    <style name="Theme.Swap.ActionBar" parent="ActionBar.Transparent.TMessages.Start">
+        <item name="android:titleTextStyle">@style/Theme.Swap.ActionBarTitle</item>
+    </style>
+
+    <style name="Theme.Swap.ActionBarTitle" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
 </resources>

@@ -1,0 +1,358 @@
+﻿Samsung Service Terms and Conditions
+
+These terms and conditions ("Terms and Conditions") govern and regulate the use of the services and applications (each, a "Service", and collectively, the "Services") provided to users ("You", "Your" or "Users") by Samsung Electronics Co., Ltd. (“Samsung”) and/or its subsidiaries and affiliates (collectively, "Subsidiaries") and described in more detail at [http://swap.sec.net/search] (the "Website"). You may use the Services to locate, browse and use applications, data files and other content, some of which may be offered by Samsung or its Subsidiaries and some of which may be made available by third parties that are not affiliated with Samsung (collectively, "Third Party Product"). You agree that Samsung and its Subsidiaries are not responsible for any Third Party Product and make no representations or warranties relating to such Third Party Product, and You access such Third Party Product at your own risk. You also acknowledge and agree that additional policies, terms, conditions and licenses ("Special Terms") may govern your use of a particular Service or Third Party Product, in which case such Special Terms shall supplement these Terms and Conditions with respect to Your use of such Service or Third Party Product. You agree to abide by such other Special Terms, including where applicable representing that you are of sufficient legal age to use such Service or Third Party Product. In the event of a conflict or inconsistency between these Terms and Conditions and any such Special Terms, the Special Terms shall prevail with respect to Your use of that part or feature of the particular Service or Third Party Product giving rise to the conflict or inconsistency.
+Please read these Terms and Conditions carefully. Your use of any Samsung Service indicates that you have read, accepted and unconditionally agreed to these Terms and Conditions and any other applicable terms. The Privacy Policy for the Samsung Services is incorporated herein by Mobile Messenger which is providing Samsung Service. You may not Use the Services if You are a (a) person who is not of legal age to form a binding contract with Samsung or (b) person who is barred from receiving the Services under the laws of any country including the country in which You are a resident or from which You are using the Services. Your use of the Services includes the ability to enter into agreements and/or to make transactions electronically. YOU ACKNOWLEDGE THAT YOUR ELECTRONIC ASSENT CONSTITUTES YOUR AGREEMENT AND INTENT TO BE BOUND BY THESE TERMS AND CONDITIONS AND HONOR ALL TRANSACTIONS YOU ENTER INTO.
+How You may accept the Terms and Conditions,
+How Samsung may change the Terms and Conditions, and
+How You or Samsung may terminate Your account
+
+1. Acceptance of the Terms and Conditions
+
+1.1. Before You are permitted to Use the Services You are required to accept the Terms and Conditions and any Special Terms, as the case may be. Terms and Conditions and any Special Terms may be accepted by clicking the "accept" button if such button or function is available or present via the user interface for the respective Service. 
+
+1.2. You also accept the Terms and Conditions or any Special Terms when You access or actually start to use the Services. In this case You understand that You are bound by and Samsung will treat You as being bound by the Terms and Conditions from the moment You access or start using the Services.
+
+2. Changes to the Terms and Conditions
+
+2.1. Samsung reserves the right, in its sole discretion, to modify, update, add to, discontinue, remove or otherwise change any portion of these Terms and Conditions at any time.
+
+2.2. When Samsung amends these Terms and Conditions, we will revise the “last updated” date located at the bottom of these Terms and Conditions. For changes that we consider to be material, we will place a notice on the Website by revising the link on the homepage to read substantially as “Updated Terms and Conditions” for a reasonable amount of time. If you provide information to us or access or use any Samsung Service in any way after these Terms and Conditions have been changed, you will be deemed to have unconditionally consented and agreed to such changes. The most current version of these Terms and Conditions will be available on the Website and will supersede all previous versions.
+
+3. Termination
+
+3.1. As long as You comply with these Terms and Conditions, Samsung grants you a personal, non-exclusive, non-transferable, limited privilege to enter and use the Services.
+
+3.2. You close Your Account at any time.
+
+3.3. You agree that Samsung may stop (permanently or temporarily) providing any or all of the Services (or any features within the Services) to You or to users generally at Samsung’s sole discretion, without prior notice to you. 
+
+3.4. Without limiting the generality of the foregoing, Samsung is entitled to disable your account at any time and without observing any notice period if:
+a. You are in breach of these Terms and Conditions; 
+b. You have clearly demonstrated (regardless of whether directly or through Your actions or statements or otherwise) that You do not intend to comply with these Terms and Conditions;
+c. Samsung, (including Samsung's Subsidiaries) or any supplier or partner of Samsung providing the Services to or together with Samsung decide to terminate the provision of the Services or any parts thereof (either worldwide or in the country where You are a resident or from where You are Using the Services) or if any supplier or partner of Samsung decides to terminate the entire relationship with Samsung and regardless of the reason of such termination, including where Samsung or any supplier or partner of Samsung are of the opinion that the provision of the Services or parts thereof to You or to Samsung or together with Samsung are no longer commercially feasible; or 
+d. Samsung (including Samsung's Subsidiaries) or any supplier or partner of Samsung providing the Services to or together with Samsung are required by applicable law to terminate the provision of the Services or parts thereof (for example if due to changes in applicable law or due to court rulings or judgments the Services or parts thereof become or are considered unlawful).
+
+3.5. The termination of this Agreement shall have no prejudice to any rights, obligations and liabilities that You or Samsung have accrued or incurred during the term of this Agreement.
+How You may Use the Services and 
+How Samsung may use Your content or how You may use Samsung's content
+
+4. Provision of the Services and limitations of usage
+
+4.1. The Services are provided to You by Samsung and Samsung's Subsidiaries. 
+
+4.2. Unless otherwise specified in these Terms and Conditions or any applicable Special Terms, You are permitted to, and You agree that You will, (1) use the Services for personal and non-commercial use and purposes only, (2) not reproduce, duplicate, copy, sell, trade or resell any of the Services or parts thereof, (3) not remove any proprietary notice language corresponding to the Services, and (4) make no modifications to any such Services.
+
+4.3. You may not attempt to gain unauthorized access to any portion or feature of the Services, or any other systems or networks connected to the Services or to any Samsung server, or to any of the services offered on or through the Services, by hacking or any other illegitimate means.
+
+4.4. When You Use the Services You will at all times observe these Terms and Conditions and any applicable law or regulation in the relevant jurisdictions including the jurisdiction where You are a resident or from where You are using the Services.
+
+4.5. Samsung may at any time and in its sole discretion without prior warning or notice:
+a. change the Services or suspend and/or cease providing the Services or any part of the Services;
+b. disable or suspend Your Use of the Services including access to Your User account(s) and any files or other content contained in Your account(s) either temporarily or permanently; 
+c. set a limit on the number of transmissions You may send or receive through the Services or on the amount of storage space used for the provision of the Services or any part of the Services to You; and
+d. review, flag, filter, modify, refuse, reject, block access to or remove any or all Content from the Services. 
+
+4.6. From time to time, Samsung may discover a Third Party Product accessible through the Services that violates the legal agreements developers enter into with Samsung or it Subsidiaries, laws, regulations or other policies. You agree that in such an instance Samsung retains the right to make it non accessible any such Third Party Product from your device in its sole discretion. 
+
+4.7. You are not permitted to Use any of the Services (including any attempts to do so) other than through the interface made available to You by Samsung and You will not Use the Services (including any attempts to do so) through any automated tools (including software and/or hardware), functions, services or otherwise (including scripts or web crawlers).
+
+4.8. You will comply with and follow all instructions made available to You by Samsung in connection with the Services and You will not engage in any activity that may cause interference with or disruption to the Services or any servers, networks or other equipment connected to the Services.
+
+4.9. Some of the Services can be used or are particularly useful when used over mobile networks. You should be aware that Your network provider may charge You for access to its network, the duration of Your mobile phone's/ mobile device's connection to the network and the data volume used to use the Services or Third Party Products. You are entirely responsible to check with Your network provider whether any such costs may apply before using the Services or Third Party Products in this respect.
+
+5. Advertisements
+
+5.1. You agree that Samsung, as part of the Services, places or displays to You advertisements, promotion materials or other content and materials or products for promotional purposes.
+
+6. Software and software updates and updates to the Services
+Services originating from Samsung may communicate with Samsung servers from time to time to check for available updates, such as bug fixes, patches, enhanced functions, missing plug-ins and new versions (collectively, "Software Updates"). By using these Services and/or Third Party Products, You agree to use Software Updates. Such Software Updates may be in various forms and are generally provided for the purposes of improving the performance, security and reliability of the Services or the applicable Third Party Product or the device used to access the Services.
+
+7. Content provided in the Services and content rights
+
+7.1. All content that is made available in the Services or accessible as part of or by the use of the Services (including audio and sound files, data files, images, music, photographs, software, videos and written text) ("Content") is entirely the responsibility of the originator of such Content. The Content may include, without limitation, advertisements, promotional material, sponsored elements or other material.
+
+7.2. The Content may be protected by proprietary or intellectual property rights of third parties (such as partners, advertisers and sponsors or their agents who provide such Content to Samsung). You are not permitted to modify, rent, lease, loan, sell, distribute or create derivative works based on any Content (either in whole or in part) or to grant licenses in the Content.
+
+7.3. You understand that by using the Services You are exposed to the risk that You may find some Content offensive, indecent or objectionable and that any Use of the Services as regards such exposure is entirely at Your own risk.
+
+8. User Content and User Content License
+
+8.1. By uploading, transmitting, creating, posting, displaying or otherwise providing any information, materials, documents, media files or other content on or through the Services ("User Content") You hereby grant Samsung and Samsung's Subsidiaries an irrevocable, unlimited, worldwide, royalty-free, and non-exclusive license to copy, reproduce, adapt, modify, edit, distribute, translate, digitize, publish, publicly perform and publicly display the User Content ("User Content License") to the full extent necessary to provide the Services.
+
+8.2. The User Content License shall include a right for Samsung and Samsung's Subsidiaries to (a) perform all technical steps necessary to process and prepare the User Content for use in the Services, including any modification and/or adaption required to provide the Services to Users and/or to transmit or distribute the User Content over public networks and in media and (b) make available and sublicense the User Content to third parties for the use of the User Content in connection with the provision of the respective Services by these third parties.
+
+8.3. Samsung does not claim ownership of the User Content and You will retain any copyright and any other rights to any User Content provided by You on or through the Services.
+
+8.4. Any protection and enforcement of any intellectual property rights which exist or pertain to the User Content are entirely Your responsibility and Samsung is not obliged to protect and enforce the User Content on Your behalf.
+
+8.5. You are entirely responsible to backup Your User Content stored with Samsung or through the Services to another location outside the Services (e.g. by means of creating local copies or backups with specialized online backup services) to avoid loss of Your User Content and other data.
+
+8.6. If you send or post certain specific submissions at our request (e.g., via message boards or in connection with contests) or if you send us creative suggestions, ideas, notes, photographs, drawings, concepts, or any other information (each, a "Submission" and collectively, the "Submissions") despite our request that you not send us any unsolicited Submissions or other creative materials, the Submission will be treated as non-confidential and non-proprietary in each instance. "Submissions" are separate and apart from User Content. None of the Submissions shall be subject to any obligation of confidence on the part of Samsung, and Samsung shall not be liable for any use or disclosure of any Submissions. Any Submission may be used by Samsung without restriction for any purpose whatsoever, including, without limitation, reproduction, disclosure, transmission, publication, broadcast or posting, and You hereby irrevocably waive, release and give up any claim that any use of such Submission violates any of Your rights, including, without limitation, copyrights, trademarks, moral rights, privacy rights, proprietary or other property rights, publicity rights, or right to credit for the material or ideas. Samsung shall have and is irrevocably granted the right, but not the obligation, to reproduce, modify, adapt, publish, broadcast, license, perform, post, sell, translate, incorporate, create derivative works from, distribute and otherwise use the Submission in any and all media, now known or hereafter devised, throughout the universe, in perpetuity, without according You any compensation or credit. By submitting a Submission to any Samsung Service or Samsung, you represent that such Submission is original with you and does not violate or infringe upon the rights of any third parties, including, without limitation, any intellectual property rights and rights of publicity and/or privacy. Submissions will not be acknowledged or returned. You agree and understand that Samsung is not obligated to use any Submission you make to any Samsung Service or Samsung and you have no right to compel such use. You hereby acknowledge and agree that Your relationship with Samsung is not a confidential, fiduciary, or other special relationship, and that your decision to submit any material to Samsung does not place Samsung in a position that is any different from the position held by members of the general public with regard to your Submission. You understand and acknowledge that Samsung has wide access to ideas, stories, designs, and other literary materials, and that new ideas are constantly being submitted to it or being developed by Samsung’s own employees. Many ideas or stories may be competitive with, similar or identical to your Submission in theme, idea, plot, format or other respects. You acknowledge and agree that You will not be entitled to any compensation as a result of Samsung’s use of any such similar or identical material. Finally, you acknowledge that, with respect to any claim you may have relating to or arising out of a Samsung 's actual or alleged exploitation or use of any material You submit to any Samsung Service and/or Samsung, the damage, if any, thereby caused will not be irreparable or otherwise sufficient to entitle you to injunctive or other equitable relief or to in any way enjoin the production, distribution, exhibition or other exploitation of any production based on or allegedly based on the material, and Your rights and remedies in any such event shall be strictly limited to the right to recover damages, if any, in an action at law. Solely to avoid undue repetition, references to "Samsung" in this subparagraph shall be deemed to include Samsung Subsidiaries.
+
+9. Samsung Services License
+
+9.1. As between You and Samsung, Samsung owns all right, title and interest in and to the Services, including without limitation all applicable intellectual property rights or other proprietary rights in such Services, regardless of whether registered/legally secured or not.
+
+9.2. Except for the rights granted to You in these Terms and Conditions and any Special Terms, Samsung retains all rights in or pertaining to the Services.
+
+9.3. You are not permitted to (a) grant any other User or third party a license to Use the Services or otherwise to access Your account or the Services, (b) Use the Services to provide services to other Users or any other third parties or (c) otherwise assign, grant a sublicense in, or grant a security interest in or over the Samsung License or any rights under it, loan or lease the Services and/or the Samsung License, or otherwise transfer the Samsung License or any rights under it to any third party.
+
+9.4. You are not permitted to copy, edit, modify, alter or create a derivative work of, reverse engineer, decompile or otherwise attempt to extract the source code of Samsung Services (or any part of it), unless expressly permitted by Samsung in writing, or to the extent permitted under the laws applicable to You, and You will not permit or grant a license to any third party to do so.
+
+10. Trademarks
+
+10.1. You are not entitled to use any of Samsung's (including Samsung's Subsidiaries) trade names, trademarks, service marks, logos, domain names, or other distinctive brand features ("Samsung's Brands") without Samsung's prior written consent. To the extent that You are entitled to use Samsung's Brands under a separate written agreement with Samsung, such use is only permitted in accordance with such separate agreement.
+
+10.2. You are not permitted to remove, obscure, conceal, modify or otherwise alter any proprietary rights notices, signs, trademarks, service marks, trade names, logos or other marks of Samsung, Samsung's Subsidiaries or any third party (including copyright and trade mark notices) which pertain to, are affixed to or which are contained within the Services and You agree not to use any such signs, trademarks, service marks, trade names, logos or other marks of Samsung, Samsung's Subsidiaries or any third party in a way that is intended to, likely to or foreseeable to mislead others or cause confusion about the owner, license holder or authorized User, as the case may be, of such marks, names or logos.
+What You should know about your Registration Data and Account Data
+
+11. Privacy and protection of personal data
+
+11.1. See Privacy Policy of Mobile Messenger which provides a way to use WebApp Search to learn more about how Samsung protects and handles Your personal data and information when You use the Services.
+How You and Samsung are liable under these Terms and Conditions
+
+12. YOUR WARRANTIES AND REPRESENTATIONS
+
+12.1. YOU ARE ENTIRELY RESPONSIBLE FOR THE USER CONTENT PROVIDED BY YOU AND FOR ANY CONSEQUENCES ARISING IN CONNECTION WITH THAT USER CONTENT (INCLUDING ANY LOSS OR DAMAGE SUFFERED OR INCURRED BY SAMSUNG AND SAMSUNG'S SUBSIDIARIES). IN PARTICULAR, YOU WARRANT AND REPRESENT TO SAMSUNG THAT:
+A. YOU ARE THE OWNER OF ALL RIGHTS PERTAINING TO THE USER CONTENT OR OTHERWISE AUTHORIZED TO GRANT SAMSUNG THE USER CONTENT LICENSE;
+B. THE USER CONTENT WILL NOT INFRINGE ANY INTELLECTUAL PROPERTY OR OTHER THIRD PARTY RIGHTS; 
+C. THE USER CONTENT WILL NOT CONTAIN ANY MATERIAL WHICH IS HARMFUL, INACCURATE, PORNOGRAPHIC, ABUSIVE, OBSCENE, THREATENING, DEFAMATORY, OR WHICH IS OTHERWISE ILLEGAL OR WHICH DOES NOT COMPLY WITH APPLICABLE LAW OR SAMSUNG'S CONTENT GUIDELINES;
+D. THE USER CONTENT WILL NOT CONTAIN ANY VIRUSES OR OTHER HARMFUL SOFTWARE, CODE OR SIMILAR MEANS AND DEVICES WHICH COULD DAMAGE, HARM, DISABLE OR OTHERWISE IMPACT OR LIMIT THE FUNCTION AND PERFORMANCE OF THE SERVICES AND/OR ANY DEVICE ACCESSING SUCH USER CONTENT. REGARDLESS OF WHETHER THIS DEVICE BELONGS TO SAMSUNG OR ANY OTHER USER OR THIRD PARTY INCLUDING SERVER, NETWORKS NODES OR ANY SIMILAR EQUIPMENT;
+E. THE USER CONTENT WILL COMPLY AND CONFORM TO ANY AGE CLASSIFICATION RULES AND REQUIREMENTS (INCLUDING ACCURATE AND ADEQUATE CLASSIFICATION AND RATING OF ANY USER CONTENT, AS THE CASE MAY BE) UNDER THE LAWS OF ANY COUNTRY, INCLUDING THE COUNTRY IN WHICH YOU ARE A RESIDENT OR FROM WHICH YOU ARE USING THE SERVICES; AND
+F. THE USE OF THE USER CONTENT BY SAMSUNG OR SAMSUNG'S SUBSIDIARIES WILL NOT IMPOSE ANY OBLIGATION UPON SAMSUNG OR SAMSUNG'S SUBSIDIARIES TO PAY ANY KIND OF MONETARY CONTRIBUTION (INCLUDING LICENSE FEES, DUES OR OTHERWISE) TO ANY THIRD PARTY (IN PARTICULAR COLLECTING SOCIETIES).
+
+12.2. YOU AGREE TO INDEMNIFY AND HOLD HARMLESS SAMSUNG AND THE SAMSUNG SUBSIDIARIES FROM ANY LOSS, DAMAGE, LIABILITY OR EXPENSE INCURRED BY SAMSUNG AND THE SAMSUNG SUBSIDIARIES AS A RESULT OF ANY BREACH OF YOUR REPRESENTATIONS, WARRANTIES, COVENANTS OR OBLIGATIONS UNDER THESE TERMS AND CONDITIONS.
+
+13. SAMSUNG'S WARRANTIES AND REPRESENTATIONS
+
+13.1. UNLESS OTHERWISE EXPRESSLY STATED IN THIS AGREEMENT, SAMSUNG, THE SAMSUNG SUBSIDIARIES, AND ITS SUPPLIERS, PARTNERS AND/OR LICENSORS EXCLUDE ALL WARRANTIES AND CONDITIONS OF ANY KIND WHETHER EXPRESSLY OR IMPLIED. IN PARTICULAR BUT WITHOUT LIMITATION, SAMSUNG, THE SAMSUNG SUBSIDIARIES, AND ITS SUPPLIERS, PARTNERS AND/OR LICENSORS DO NOT WARRANT OR REPRESENT THAT:
+A. THE SERVICES ARE FIT FOR ANY PURPOSE OR MEET YOUR REQUIREMENTS OR ARE PROVIDED TO YOU WITHOUT ANY ERRORS OR DEFICIENCIES OR THAT THEY ARE IN COMPLIANCE WITH ANY QUALITY LEVELS, AS THE CASE MAY BE;
+B. THE SERVICES ARE AVAILABLE TO YOU AT ANY TIME AND PROVIDED TO YOU WITHOUT DISRUPTION, INTERRUPTION OR DELAY;
+C. THE SERVICES DO NOT INFRINGE ANY COPYRIGHT OR VIOLATE ANY LAWS WHETHER IN THE COUNTRY WHERE YOU ARE A RESIDENT OR ELSEWHERE IN THE WORLD;
+D. ANY INFORMATION (WHETHER ORAL OR WRITTEN) OBTAINED BY YOU FROM SAMSUNG OR AS A RESULT OF YOUR USE OF THE SERVICES (INCLUDING ANY MATERIALS OR PRODUCTS) WILL BE SUITABLE, ACCURATE, COMPLETE, OR RELIABLE; AND
+E. THAT ANY DEFICIENCIES IN THE SERVICES, INCLUDING ANY DEFECTS IN PERFORMANCE, OPERATION OR FUNCTIONALITY OF THE SERVICES OR ANY SOFTWARE PROVIDED TO YOU AS PART OF THE SERVICES WILL BE FIXED, CORRECTED OR OTHERWISE REMEDIED. 
+
+13.2. ANY DOCUMENTS OR MATERIAL (INCLUDING ANY SOFTWARE AND FIRMWARE UPDATES) DOWNLOADED, INSTALLED OR OTHERWISE OBTAINED THROUGH THE USE OF THE SERVICES ARE PROVIDED BY SAMSUNG "AS IS" AND AT YOUR OWN RISK. SAMSUNG IS NOT RESPONSIBLE FOR ANY DAMAGE TO YOUR MOBILE PHONE OR MOBILE PHONE'S, SOFTWARE, COMPUTER SYSTEM OR OTHER DEVICE OR DEVICE'S SOFTWARE OR ANY LOSS OF DATA THAT IS CAUSED BY OR RESULTS FROM THE DOWNLOAD AND/OR USE OF ANY SUCH DOCUMENTS AND/OR MATERIAL.
+
+14. YOUR LIABILITY
+
+14.1. YOU ARE ENTIRELY RESPONSIBLE FOR ANY BREACH OF YOUR OBLIGATIONS UNDER 
+A. THESE TERMS AND CONDITIONS; AND 
+B. ANY APPLICABLE LAW OR REGULATION IN THE RELEVANT JURISDICTIONS, INCLUDING THE JURISDICTION WHERE YOU ARE A RESIDENT OR FROM WHERE YOU ARE USING THE SERVICES
+AND FOR THE CONSEQUENCES OF ANY SUCH BREACH, INCLUDING ANY LOSS OR DAMAGE WHICH SAMSUNG OR ANY THIRD PARTY MAY INCUR OR SUFFER. SAMSUNG WILL HAVE NO RESPONSIBILITY TO YOU OR TO ANY THIRD PARTY IN RESPECT OF SUCH BREACH.
+
+15. SAMSUNG'S LIABILITY
+
+15.1. SUBJECT TO CLAUSE ‎17.3, SAMSUNG AND THE SAMSUNG SUBSIDIARIES ARE NOT LIABLE TO YOU, REGARDLESS OF THE LEGAL GROUNDS, IN PARTICULAR WHETHER IN CONTRACT, TORT (INCLUDING NEGLIGENCE) OR ANY THEORY OF LIABILITY, AND WHETHER OR NOT THE POSSIBILITY OF SUCH DAMAGE OR LOSSES HAS BEEN NOTIFIED TO SAMSUNG, FOR:
+A. ANY INDIRECT, INCIDENTAL, SPECIAL OR CONSEQUENTIAL DAMAGES;
+B. ANY LOSS OF INCOME, BUSINESS, ACTUAL OR ANTICIPATED PROFITS, OPPORTUNITY, GOODWILL OR REPUTATION (WHETHER DIRECT OR INDIRECT);
+C. ANY DAMAGE TO AND/OR CORRUPTION OR LOSS OF DATA (WHETHER DIRECT OR INDIRECT);
+D. ANY LOSS OR DAMAGE AS A RESULT OF: 
+I. ANY BREACH OF THE TERMS AND CONDITIONS OF THIS AGREEMENT OR ANY OTHER AGREEMENT OR CONTRACTUAL RELATIONSHIP BETWEEN SAMSUNG AND YOU WHICH IS ATTRIBUTABLE TO NEGLIGENCE ON THE PART OF SAMSUNG, THE SAMSUNG SUBSIDIARIES AND ITS SUPPLIERS, PARTNERS AND/OR LICENSORS; 
+II. ANY RELIANCE PLACED BY YOU ON THE SUITABILITY, ACCURACY, COMPLETENESS, RELIABILITY OR EXISTENCE OF ANY (A) SERVICES (INCLUDING ANY SOFTWARE, INFORMATION, DOCUMENTS, MATERIALS MADE AVAILABLE TO YOU AS PART OR IN COURSE OF THE USAGE OF THE SERVICES) OR (B) ADVERTISING OR AS A RESULT OF ANY RELATIONSHIP OR TRANSACTION BETWEEN YOU AND ANY ADVERTISER OR SPONSOR WHOSE ADVERTISING (INCLUDING ANY PROMOTIONAL MATERIAL) IS MADE AVAILABLE ON OR BY YOUR USE OF THE SERVICES; 
+III. ANY CHANGES, MODIFICATIONS, EXTENSIONS OR LIMITATIONS (INCLUDING ANY SUSPENSION OF YOUR USE OF THE SERVICES, ACCESS TO YOUR ACCOUNT AND ACCOUNT DATA OR YOUR REGISTRATION DATA) TO THE SERVICES, OR ANY PERMANENT OR TEMPORARY CESSATION IN THE PROVISION OF THE SERVICES (OR ANY PART OF THEM); OR
+IV. THE USE OF YOUR ACCOUNT DATA BY ANY OTHER PERSON THAN YOURSELF (REGARDLESS OF WHETHER WITH OR WITHOUT YOUR KNOWLEDGE). YOU ARE FULLY RESPONSIBLE AND LIABLE TO COMPENSATE SAMSUNG FOR ANY DAMAGE AND/OR LOSS INCURRED DUE TO THE USE OF YOUR ACCOUNT DATA BY SOMEONE ELSE.
+
+15.2. IN THE EVENT THAT SAMSUNG OR THE SAMSUNG SUBSIDIARIES ARE LIABLE FOR A BREACH OF THESE TERMS AND CONDITIONS, SAMSUNG'S LIABILITY SHALL BE LIMITED TO ACTUAL DAMAGES WHICH SAMSUNG MUST TYPICALLY EXPECT AT THE TIME OF THE CONCLUSION OF THIS AGREEMENT DUE TO THE CIRCUMSTANCES KNOWN AT THE TIME. 
+
+15.3. NOTHING IN THESE TERMS AND CONDITIONS SHALL EXCLUDE OR LIMIT SAMSUNG'S
+A. LIABILITY FOR DEATH, PERSONAL INJURY OR FRAUD OR IN ACCORDANCE WITH ANY PRODUCT LIABILITY ACT; AND
+B. WARRANTY OR LIABILITY FOR DAMAGES OR LOSSES WHICH MAY NOT BE LAWFULLY EXCLUDED OR LIMITED BY APPLICABLE LAW. IF THE LAWS IN THE USER'S JURISDICTION DO NOT ALLOW THE EXCLUSION OF CERTAIN WARRANTIES, TERMS OR CONDITIONS OR THE LIMITATION OR EXCLUSION OF LIABILITY FOR LOSS OR DAMAGE CAUSED BY NEGLIGENCE, BREACH OF CONTRACT OR BREACH OF IMPLIED TERMS, OR INCIDENTAL OR CONSEQUENTIAL DAMAGES, ONLY THE LIMITATIONS WHICH ARE LAWFUL IN THAT JURISDICTION WILL APPLY TO THE USER AND SAMSUNG'S LIABILITY AND WARRANTY WILL BE LIMITED TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW.
+
+16. Force Majeure
+
+16.1. Samsung is not liable or responsible for any failure to perform, or delay in performance of any of Samsung's obligations under this Agreement that is caused by events outside Samsung's reasonable control ("Force Majeure Event"), in particular (without limitation) (a) unavailability of public or private telecommunication networks (b) acts, decrees, legislation, regulations or restrictions of any government or (c) strikes, lock-outs or other industrial action, civil commotion, riot, invasion, terrorist attacks or threats of terrorist attacks, war (whether declared or not) or any natural disaster. 
+
+16.2. Samsung's performance under this Agreement is deemed to be suspended for the period that Force Majeure Event continues, and Samsung will have an extension of time for performance for the duration of that period. 
+
+16.3. Samsung will use its reasonable efforts to bring the Force Majeure Event to a close or to find a solution by which Samsung's obligations under this Agreement may be performed despite the Force Majeure Event.
+
+17. Links to third party sites and other content
+
+17.1. The Services may contain hyper links to content resources and services of third parties, including other websites ("External Resources"). Samsung is not responsible for and has no control over the content (including advertisements, products and other materials) provided, made available and/or displayed to You under these External Resources and is not liable for any damage or loss incurred by You due to or as a result of the content (including any reliance by You on the availability, accuracy, applicability or completeness of the content) which is made available to You, provided to You or displayed to You under these External Resources. 
+
+17.2. You may from time to time and as a result of or through the Use of the Services purchase or avail Yourself of services, goods or software which is provided to You by a third party. Your use of such other services, goods or software may be subject to separate terms and conditions between You and the respective third party. This Agreement does not affect Your legal relationship with that third party and Samsung is not liable or responsible for any services, goods or software provided to You by any third party.
+What else You should know and understand
+
+18. Language of this Agreement
+Samsung may provide You with a translation of the English version of these Terms and Conditions. This translation is provided for Your convenience only. In the event of any conflict between the English language version and the translation version of these Terms and Conditions and to the extent permissible by applicable law, the English language version takes precedence over any translation version.
+
+19. Procedure for making claims and notices regarding infringement of intellectual property rights and other rights
+
+19.1. Samsung may respond to notices of alleged copyright infringement or violation of other laws in accordance with applicable law and may terminate, suspend or block access (either temporary or permanently) to accounts of Users who repeatedly infringe copyright laws or violate other applicable law.
+
+19.2. Any notices regarding any copyright infringement or violation of other laws by the Services, any content provided with or displayed in the Services or any User Content should be sent to [http://help.content.samsung.com].
+
+20. Confidentiality
+
+20.1. The Services may contain information which is confidential to Samsung including, without limitation, all information designated as confidential or recognisable as trade or business secrets or for other reasons recognisable or made available to You as confidential.
+
+20.2. Unless stated otherwise in these Terms and Conditions You will (a) keep such information confidential for an unlimited period of time and not disclose such information without Samsung's prior written consent and (b) neither record or otherwise utilise such information unless required for the purposes of these Terms and Conditions.
+
+20.3. Clause ‎22.1 shall not apply in the event that You are required to disclose information which is confidential to Samsung according to applicable law. In this case and to the extent permissible by applicable law, You will notify Samsung immediately of any disclosure of any information which is confidential to Samsung.
+
+21. General provisions
+
+21.1. Samsung will rely only on the written Terms and Conditions. Any representations, statements or agreements made or entered into elsewhere, whether directly or indirectly, written or oral or in advertising are not binding towards Samsung unless expressly confirmed in writing by Samsung to You.
+
+21.2. Samsung may provide You with notices (including notices relating to changes to the Agreement or termination of the Services or parts thereof) by postings on or via the Services. 
+
+21.3. If Samsung does not exercise or enforce any legal right or remedy which is set out in these Terms and Conditions or which Samsung has the benefit of under any applicable law, this will not be construed as a formal waiver of Samsung's rights or remedies and such rights or remedies will remain available to Samsung. 
+
+21.4. If any provision of these Terms and Conditions is held to be invalid, illegal or unenforceable (in whole or in part) as determined by a court of law having jurisdiction to decide on this matter, the validity, legality and enforceability of the remaining provisions shall not in any way be affected or impaired.
+
+21.5. Each of the Samsung's Subsidiaries is an intended third party beneficiary to these Terms and Conditions Agreement and shall be entitled to directly enforce and rely upon any provision of these Terms and Conditions which confers a benefit on (or rights in favour of) them. Subject to the foregoing, no other person shall be a third party beneficiary to these Terms and Conditions.
+
+21.6. You are not permitted to transfer, assign or otherwise dispose of these Terms and Conditions which is personal to You, or any of Your rights or obligations arising under these Terms and Conditions without the prior written consent of Samsung.
+
+21.7. This Agreement and Your relationship with Samsung under these Terms and Conditions shall be governed and construed in accordance with the laws of the jurisdiction where You are a resident, without regard to its conflict of law provisions. Subject to Samsung right to seek injunctive remedies (or an equivalent type of urgent legal relief) in any jurisdiction, You unconditionally consent and agree that: (1) any claim, dispute, or controversy (whether in contract, tort, or otherwise) you may have against the officers, directors and employees of Samsung and its Subsidiaries (all such individuals and entities collectively referred to herein as the “Samsung Entities”) arising out of, relating to, or connected in any way with the Services or the determination of the scope or applicability of this agreement to arbitrate, will be resolved exclusively by final and binding arbitration administered by JAMS or another mutually-acceptable alternative dispute resolution provider ("Arbitration Tribunal") and conducted before a sole arbitrator in accordance with the rules of the Arbitration Tribunal; (2) this arbitration agreement is made pursuant to a transaction involving interstate commerce in the United States, and shall be governed by the Federal Arbitration Act (“FAA”), 9 U.S.C. §§ 1-16; (3) the arbitrator’s decision shall be controlled by these Terms and Conditions and any of the other agreements referenced herein that the applicable User may have entered into in connection with the Services; (4) the arbitrator shall honor claims of privilege recognized at law; (5) there shall be no authority for any claims to be arbitrated on a class or representative basis, arbitration can decide only your and/or the applicable Samsung Entity’s individual claims; the arbitrator may not consolidate or join the claims of other persons or parties who may be similarly situated; (6) the arbitrator shall not have the power to award punitive damages against you or any Samsung Entity; (7) in the event that the administrative fees and deposits that must be paid to initiate arbitration against any Samsung Entity exceed $125 USD, and You are unable (or not required under the rules of the Arbitration Tribunal) to pay any fees and deposits that exceed this amount, Samsung agrees to pay them and/or forward them on Your behalf, subject to ultimate allocation by the arbitrator. In addition, if You are able to demonstrate that the costs of arbitration will be prohibitive as compared to the costs of litigation, Samsung will pay as much of Your filing and hearing fees in connection with the arbitration as the arbitrator deems necessary to prevent the arbitration from being cost-prohibitive; and (8) with the exception of subparts (5) and (6) above, if any part of this arbitration provision is deemed to be invalid, unenforceable or illegal, or otherwise conflicts with the rules of the Arbitration Tribunal, then the balance of this arbitration provision shall remain in effect and shall be construed in accordance with its terms as if the invalid, unenforceable, illegal or conflicting provision were not contained herein. If, however, subpart (5) or subpart (6) is found to be invalid, unenforceable or illegal, then if Samsung so elects, the entirety of this arbitration provision shall be null and void, and neither You nor Samsung shall be entitled to arbitrate their dispute.
+
+
+
+< Samsung WebApp Search Terms and Conditions for Users >
+
+1. Your Use of Samsung Services
+Your use of the Samsung WebApp Search website at swap.sec.net/search and any application, software, services, websites and other related services provided by us or any third party designated by us, including without limitation and services powered by Samsung WebApp Search (collectively, “Services”, excluding any application, software or services provided to you by Samsung under a separate written agreement) is subject to the terms and conditions set out below (collectively, the “Terms”).
+“Samsung” means Samsung Electronics Co., Ltd, and Samsung Affiliated Companies, as defined in Section 14.5. You may contact us through the Help menu of the Store.
+By using the Service, you can purchase, access and download the content and software applications available in the Store (“Application(s)”), including updates, either at no charge or for the price indicated. Applications available in the Store may be provided by third parties or Samsung. If you purchase a third party Application, you will enter into a contract directly with the third party Application provider, not Samsung.
+
+2. Accepting the Terms
+
+2.1 PLEASE READ THESE TERMS CAREFULLY. THESE TERMS CONSTITUTE A BINDING LEGAL AGREEMENT BETWEEN YOU AND SAMSUNG RELATING TO YOUR USE OF THE STORE AND THE SERVICES. In order to use the Services, you must first agree to the Terms. If you do not accept the Terms, you may not use the Services. 
+
+2.2 Samsung may modify these Terms from time to time. If you continue to use the Service after such modification, you will be deemed to have read, understood and unconditionally agreed to such changes. 
+
+2.3 You may not use the Services or provide us with personal information if: (a) you are under the age of 18 or under the age of majority in your jurisdiction; however, if you are between 13 and 18 (or the age of majority in your jurisdiction) and you have obtained the permission from your parent or legal guardian for your use of the Services, and your parent or legal guardian agrees to these Terms on your behalf, you may use the Store or Services provided you comply with Section 2.4 below), (b) you are a person barred from receiving the Services under the applicable laws of the jurisdiction in which you are a resident or from which you use the Services, or (c) you are in a country or location to which Samsung does not provide the Services.
+
+2.4 If you are between the ages of 13 and 18 (or the age of majority in your jurisdiction), before you use the Services, Samsung may ask you to confirm that you have obtained the permission of your parent or legal guardian, and that they have agreed to these Terms on your behalf. Even if Samsung does not do this, if you use the Services, you are representing the foregoing is true.
+
+3. Service Territory 
+The Service is made available only in certain countries and/or territories, at Samsung’s sole discretion. If you do not reside in one of these countries or territories, you may not use the Services. Samsung may use certain technologies to verify such compliance.
+
+4. Privacy 
+Samsung respects your privacy. In order to make the Services available to you and process the transactions made by you, Samsung may collect certain information and personal data from you, and use such information and data in accordance with our Privacy Policy. Samsung may update the Privacy Policy from time to time, so please periodically review the Privacy Policy. 
+
+5. License of Application
+
+5.1 The Applications and any other content made available to you through the Services are licensed, not sold, to you. Your license to each Application you obtain through the Service is subject to the applicable end user license agreement or other applicable end user terms of use. All rights not expressly granted to you are hereby reserved. 
+
+5.2 You acknowledge that your license of each third party Application through the Services is governed by a separate agreement between you and the third party Application provider only, and the third party Application provider is solely responsible for (a) the licensed third party Application, (b) the content and functionalities therein, (c) any warranties provided, and (d) any claims you may have relating to or your use of such third party Application. You acknowledge that Samsung is (i) acting solely as a distributor in providing the third party Application to you, (ii) is not a party to such license, and (iii) is not responsible for the third party Application, the content and functionalities therein, or any warranties or claims you may have relating to or your use of the third party Application. 
+
+5.3 The Services makes available Applications to end user customers for non-commercial uses only. You warrant and represent that you will use the Application only on your devices for your personal use. Applications may be used any number of times and to a number of your devices. You also acknowledge that: (a) (a) not all of your devices, regardless of whether it is the same platform or not, may qualify for multiple using.
+
+6. System Requirements 
+Use of the Services requires a device which is compatible with the Services, and may require a device such as a computer, Internet access (fees may apply), and certain software (fees may apply). Because use of the Services involves hardware, software and Internet access, your ability to use the Services may be affected by the performance of these factors. High speed Internet access is strongly recommended. You acknowledge and agree that such system requirements, which may change from time to time, are solely your responsibility.
+
+7. Proprietary Rights 
+
+7.1 Samsung (and Samsung’s licensors, as applicable) owns all rights, title and interest in and to the Services, including all associated intellectual property rights, whether registered or not, and wherever in the world such rights may exist. 
+
+7.2 Nothing in these Terms gives you a right to use any of Samsung’s trade names, trademarks, service marks, logos, domain names, and other distinctive brand features. 
+
+7.4 You agree that you shall not remove, obscure, or alter any proprietary rights notices (including copyright and trade mark notices) which may be affixed to or contained within the Services or Applications. 
+
+8. Software updates and availability of Services
+
+8.1 The Services may automatically update WebApp Search from Samsung from time to time. These updates may improve, enhance and further develop the Services and may take the form of bug fixes, enhanced functions, new software modules or completely new versions. You agree to use and allow Samsung to provide such updates to you as part of your use of the Services.
+
+8.2 Samsung reserves the right, at its sole discretion, to modify the Services at any time, with or without notice to you. The Services may not be available at all times, such as during maintenance breaks. Samsung may decide, at its sole discretion, to suspend or terminate the Services (or any part thereof) at any time. 
+
+9. Termination 
+
+9.1 These Terms will continue to apply until terminated by you or by Samsung in accordance with the terms herein. 
+
+9.2 Samsung may, at any time and for any reason, terminate your access to the Services without notice.  
+
+10. Disclaimers and Limitation of Liability
+
+10.1 Third Party Websites and Content. The Services may include links to other websites and/or content. Samsung has no control over, and no responsibility or liability for, websites and content which are not provided by Samsung.
+
+10.2 Disclaimers. THE SERVICES ARE PROVIDED “AS IS”, "WHERE IS" AND “AS AVAILABLE” AND WITHOUT WARRANTIES OF ANY KIND. SAMSUNG AND ITS LICENSORS MAKE NO REPRESENTATIONS OR WARRANTIES OR GUARANTEES OF ANY KIND OR NATURE, WHETHER EXPRESS OR IMPLIED, REGARDING THE SERVICES, AND TO THE EXTENT PROHIBITED BY LAW, SPECIFICALLY DISCLAIMS ALL SUCH WARRANTIES, INCLUDING WITHOUT LIMITATION ANY IMPLIED WARRANTY OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. WITHOUT LIMITING THE PREVIOUS DISCLAIMER, SAMSUNG AND ITS LICENSORS DO NOT REPRESENT, WARRANT OR GUARANTEE THAT THE SERVICE WILL (I) BE COMPATIBLE WITH YOUR HARDWARE OR SOFTWARE, (II) OPERATE IN AN UNINTERRUPTED, TIMELY, SECURE OR ERROR-FREE MANNER, (III) WILL ALWAYS BE AVAILABLE OR FREE FROM ALL HARMFUL COMPONENTS OR ERRORS, INCLUDING BUT NOT LIMITED TO VIRUSES, INTERFERENCES, CORRUPTION OR OTHER SECURITY INSTRUCTIONS, OR (IV) WILL BE SECURE OR IMMUNE (INCLUDING THE CONTENT DELIVERED TO YOU OR THE INFORMATION YOU PROVIDED) FROM HACKING OR OTHER UNAUTHORIZED ACCESS.
+
+10.3 Limitation of Liability. TO THE EXTENT PROHIBITED BY LAW, IN NO EVENT SHALL SAMSUNG OR ITS LICENSORS BE LIABLE TO YOU FOR ANY INDIRECT, INCIDENTAL, CONSEQUENTIAL, SPECIAL, EXEMPLARY, PUNITIVE DAMAGES OR LOST PROFITS, EVEN IF SAMSUNG HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. THIS LIMITATION WILL APPLY REGARDLESS OF THE THEORY OF LIABILITY, WHETHER FRAUD, MISREPRESENTATION, BREACH OF CONTRACT, NEGILIGENCE, PERSONAL INJURY, PRODUCT LIABILITY, INFRINGEMENT OR ANY OTHER THEORY, REGARDLESS OF WHETHER OR NOT SAMSUNG HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. THIS LIMITATION AND WAIVER ALSO APPLIES TO ANY CLAIM YOU MAY BRING AGAINST ANY OTHER PARTY TO THE EXTENT THAT SAMSUNG WOULD BE REQUIRED TO INDEMNIFY SUCH PARTY FOR ANY CLAIM. IN NO EVENT SHALL SAMSUNG’S AGGREGRATE LIABLITY TO YOU UNDER THIS AGREEMENT EXCEED THE PURCHASE PRICE OF THE APPLICABLE APPLICATION. 
+
+11. Indemnification
+You will indemnify, release and hold harmless Samsung, its licensors, and all officers, directors, agents and employees of Samsung and its licensors, and any party acting on Samsung’s behalf, from and against any and all third party claims, actions, liabilities, losses, damages, judgments, costs and expenses, including reasonable attorneys’ fees arising out of (i) any use of the Services by you or by any person that you allow to use the Services not in accordance with these Terms, (ii) any breach of these Term by you or by any person that you allow to use the Services or (iii) any violation of any laws, regulations or the rights of any third party by you or by any person that you allow to use the Services. 
+
+12. Copyright Protection 
+Samsung will respond to notices of alleged copyright infringement and may terminate the accounts of alleged infringers. If you believe a third party is infringing your copyrights, please contact us through the Help menu of the Store.
+
+13. Advertisements 
+Some of the Services are supported by advertising revenue and may display advertisements and promotions. As consideration for access to and use of the Services, you agree that Samsung may place advertising on the Services at its sole discretion.
+
+14. General Legal Terms 
+
+14.1 These Terms and all other terms and policies referred to herein constitute the entire legal agreement between you and Samsung governing your use of the Services and supersede any prior agreements between you and Samsung relating to the Services, excluding any application, software and services which Samsung may provide to you under a separate written agreement. 
+
+14.2 You agree that Samsung may provide you with notices, including those regarding changes to these Terms, by postings on the Services. 
+
+14.3 You agree that if Samsung does not exercise or enforce any rights or remedy which is contained in the Terms or which Samsung has at law or in equity, such omission will not be taken to be a waiver of any or all such rights and remedies, and that those rights and remedies will remain available to Samsung. 
+
+14.4 If any court of law with competent jurisdiction rules that any provision of these Terms is invalid, such provision will be removed from the Terms without affecting the rest of the Terms. The remaining provisions of the Terms will continue to be valid and enforceable. 
+
+14.5 You acknowledge and agree that each Samsung Affiliated Company shall be third party beneficiaries to the Terms and shall be entitled to directly enforce, and rely upon any provision of these Terms, which confer a benefit on or rights in favor of each Samsung Affiliated Company. Other than the foregoing, no other person or company shall be third party beneficiaries hereunder. For the purposes of herein, an “Affiliated Company” of Samsung is any company, corporation, firm, partnership or other entity that controls , is controlled by, or is under common control with Samsung; the terms “controls” and “controlled” mean the ability to direct the management of the relevant entity.
+
+14.6 You may not transfer, assign, charge or otherwise dispose of these Terms, or any of your rights or obligations arising under these Terms. Samsung may transfer, assign, charge, sub-contract or otherwise dispose of these Terms, or any of its rights or obligations arising under these Terms, at any time.
+
+14.7 These Terms, and your relationship with Samsung under these Terms, shall be governed by the laws of the State of California without reference to provisions on conflict of law. Notwithstanding the foregoing, Samsung has the right to seek injunctive remedies or an equivalent urgent legal relief in any jurisdiction.
+
+14.8 By using the Services, you unconditionally consent and agree that: (a) any claim, dispute or controversy (whether in contract, tort, or otherwise) you may have against any Samsung Affiliated Company, the officers, directors, agents and employees of any Samsung Affiliated Company (“Samsung Entity(ies)”) arising out of, relating to, or connected in any way with the Services or the determination of the scope or applicability of this provision, will be resolved exclusively by final and binding arbitration administered by JAMS and conducted before a sole arbitrator in accordance with the rules of JAMS; (b) this provision is made pursuant to a transaction involving interstate commerce, and shall be governed by the Federal Arbitration Act (“FAA”), 9 U.S.C. §§ 1-16; (c) the arbitration shall be held in San Jose, California; (d) the arbitrator’s decision shall be controlled by the terms and conditions of these Terms and any other agreements, policies, guidelines and terms referenced herein that you have agreed to in connection with the Service or Store; (e) the arbitrator shall apply California law consistent with the FAA and applicable statutes of limitations, and shall honor claims of privilege recognized at law; (f) there shall be no authority for any claims to be arbitrated on a class or representative basis, arbitration can decide only your and/or the applicable Samsung Entity’s individual claims; the arbitrator may not consolidate or join the claims of other persons or parties who may be similarly situated; (g) the arbitrator shall not have the power to award punitive damages against you or any Samsung Entity; (h) in the event that the administrative fees and deposits that must be paid to initiate arbitration against any Samsung Entity exceed One Hundred Twenty-Five US Dollars (US$125), and you are unable (or not required under the rules of JAMS) to pay any fees and deposits that exceed this amount, Samsung agrees to pay and/or forward such fees on your behalf, subject to ultimate allocation by the arbitrator. In addition, if you are able to demonstrate that the costs of arbitration will be prohibitive as compared to the costs of litigation, Samsung will pay as much of your filing and hearing fees in connection with the arbitration as the arbitrator determines necessary to prevent the arbitration from being cost prohibitive; and (i) with the exception of subsection (f) above, if any part of this arbitration provision is deemed invalid, unenforceable or illegal, or otherwise conflicts with the rules of JAMS, the balance of this arbitration provision shall remain in effect and shall be construed in accordance with its terms as if the invalid, unenforceable, illegal or conflicting provision were not contained herein. If, however, subsection (f) above is found to be invalid, unenforceable or illegal, the entirety of this arbitration provision shall be null and void, and neither you nor Samsung shall be entitled to arbitrate the dispute. For more information on JAMS and/or the rules of JAMS, visit their website at www.jamsadr.com.
+
+
+
+END USER LICENSE AGREEMENT
+This End User License Agreement ("Agreement") is a binding contract between you and Samsung which governs your use of the application provided by Samsung (the “Application”). PLEASE READ THIS AGREEMENT CAREFULLY BEFORE ACCESSING OR USING THE APPLICATION BECAUSE IT CONSTITUTES A BINDING LEGAL AGREEMENT BETWEEN YOU AND SAMSUNG. 
+THE APPLICATION IS NOT INTENDED FOR USE BY ANYONE UNDER THE AGE OF 13. IF YOU ARE UNDER THE AGE OF 13, YOU MAY NOT USE THE APPLICATION OR PROVIDE SAMSUNG WITH ANY PERSONALLY IDENTIFIABLE INFORMATION. If you are 13 or older but under the age of 18, you represent that you have reviewed these terms and conditions with your parent or legal guardian and that you and your parent or guardian understand and consent to these terms and conditions. If you are a parent or guardian permitting a person under the age of 18 ("Minor") to use the Application, you agree to: (i) supervise the Minor's use of the Application; (ii) assume all risks associated with the Minor’s use of the Application, including the transmission of content to and from third parties via the Internet; (iii) assume any liability resulting from the Minor’s use of the Application; (iv) ensure the accuracy and truthfulness of all information submitted by the Minor; and (v) assume responsibility and are bound by this Agreement for the Minor’s access and use of the Application.
+BY ACCESSING OR USING THE APPLICATION, YOU ACKNOWLEDGE THAT YOU HAVE READ AND UNDERSTOOD THIS AGREEMENT, AND YOU AGREE TO COMPLY WITH AND BE BOUND BY ITS TERMS. IF YOU ARE NOT WILLING TO BE BOUND BY THE TERMS OF THIS AGREEMENT, YOU MAY NOT ACCESS OR USE THE APPLICATION. YOUR USE OF THE APPLICATION IS SUBJECT TO THE PRIVACY POLICY THAT APPLIES TO THE SERVICE, WHICH IS HEREBY INCORPORATED BY MOBILE MESSENGER WHICH IS PROVIDING SAMSUNG SERVICE, AND OTHER POLICIES, GUIDELINES AND TERMS THAT SAMSUNG MAY ADOPT FROM TIME TO TIME. 
+Samsung may modify this Agreement from time to time. If you continue to access or use the Application after such modification, you will be deemed to have read, understood and unconditionally agreed to such changes. 
+
+1. LICENSE
+
+1.1 Grant of License. Subject to the terms and conditions of this Agreement, Samsung hereby grants to you, and you accept, a limited, personal, nonexclusive, nontransferable and revocable license to use the Application only as authorized in this Agreement. The Application is only for your own personal use. You may not use the Application for any commercial purpose or in any way not expressly permitted by this Agreement. Your access to the Application is licensed, not sold. All references to the Application includes all related graphics, user interfaces, scripts and software used to implement and provide access to the Application, and any updates, upgrades, enhancements, modifications, revisions or additions to the Application made available to end users by Samsung. However, Samsung is under no obligation to provide any updates, upgrades, enhancements, modifications, revisions or additions to the Application. 
+
+1.2 Restrictions. You may not reverse engineer, copy, decompile, disassemble, derive the source code of, modify, adapt, capture, reproduce, publicly display, publicly perform, transfer, sell, license, create derivative works from or based upon, republish, upload, edit, post, transmit, distribute, exploit, circumvent or otherwise translate (or encourage or assist any other person to do any of the foregoing) the Application in whole or in part.
+
+2. INTELLECTUAL PROPERTY, LICENSES
+
+2.1 Ownership. The Application is proprietary to Samsung and its licensors (if any), and protected under applicable copyright, patent, trademark and trade secret laws. You further acknowledge and agree that, as between you and Samsung, Samsung owns and shall continue to own all right, title and interest in and to the Application, including associated intellectual property rights under the above referenced applicable laws. This Agreement does not grant you any ownership interest in or to the Application, but only a limited license to use that is revocable in accordance with the terms of this Agreement. 
+
+2.2 Right To Suspend or Discontinue Application. Samsung reserves the right to suspend the Application without notice. Without limiting the generality of the foregoing, and notwithstanding any other provision of this Agreement, Samsung and its licensors reserve the right to suspend, remove or disable access to the Application, or discontinue the Application, in whole or in part, at any time without notice for any reason, and in no event shall Samsung be liable for any claims, costs or damages caused by or arising out of such actions. 
+
+2.3 Third Party Materials. The Application includes software developed by and data provided by third parties.
+
+3. CONTENT; INFORMATION
+
+3.1 Objectionable Content. You understand that by using the Application, you may encounter content that may be offensive, indecent, explicit or objectionable. You agree to use the Application at your sole risk and that Samsung shall have no liability to you for content that may be offensive, indecent, explicit or objectionable. 
+
+4. TERM; TERMINATION
+
+4.1 Effective Date. This Agreement is effective upon your acceptance of the Agreement, or upon your  accessing or otherwise using the Application. The Application has no predetermined termination date and may continue until such time as Samsung decides to terminate the Application or when this Agreement is terminated consistent with the terms herein. 
+
+4.2 Termination by Samsung. If you fail, or Samsung reasonably suspects that you have failed to comply with any of the provisions of this Agreement, without limiting Samsung's other rights and remedies, all of which are expressly reserved, at its sole discretion and without notice to you, Samsung may immediately discontinue your access to the Application and terminate this Agreement. 
+
+5. INDEMNIFICATION 
+You will indemnify, release and hold harmless Samsung, its parent, subsidiaries and affiliates, and all officers, directors, agents and employees thereof, and any party acting on Samsung’s behalf, from and against any and all third party claims, actions, liabilities, losses, damages, judgments, costs and expenses, including reasonable attorneys’ fees (collectively, "Claims") arising out of (i) any use of the Application by you or by any person that you allow to use the Application that is not in accordance to the terms of this Agreement, (ii) any breach of this Agreement by you or by any person that you allow to use the Application or (iii) any violation of any laws, regulations or the rights of any third party by you or by any person that you allow to use the Application.
+
+6. DISCLAIMER
+
+6.1 Disclaimer of Warranties. THE APPLICATION IS PROVIDED “AS IS”, "WHERE IS" AND “AS AVAILABLE” AND WITHOUT WARRANTIES OF ANY KIND. SAMSUNG AND ITS LICENSORS MAKE NO REPRESENTATIONS OR WARRANTIES OR GUARANTEES OF ANY KIND OR NATURE, WHETHER EXPRESS OR IMPLIED, REGARDING THE APPLICATION, AND SPECIFICALLY DISCLAIMS ALL SUCH WARRANTIES, INCLUDING WITHOUT LIMITATION ANY IMPLIED WARRANTY OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. 
+WITHOUT LIMITING THE PREVIOUS DISCLAIMER, SAMSUNG AND ITS LICENSORS DO NOT REPRESENT, WARRANT OR GUARANTEE THAT THE APPLICATION WILL (i) OPERATE IN AN UNINTERRUPTED, TIMELY, SECURE OR ERROR-FREE MANNER, (ii) WILL ALWAYS BE AVAILABLE OR FREE FROM ALL HARMFUL COMPONENTS OR ERRORS OR (iii) WILL BE SECURE OR IMMUNE (INCLUDING THE CONTENT DELIVERED TO YOU OR THE INFORMATION YOU PROVIDED) FROM UNAUTHORIZED ACCESS.
+
+6.2 Disclaimer of Certain Damages. TO THE EXTENT PROHBITED BY LAW, IN NO EVENT SHALL SAMSUNG OR ITS LICENSOR BE LIABLE TO YOU FOR ANY INDIRECT, INCIDENTAL, CONSEQUENTIAL, SPECIAL, EXEMPLARY, PUNITIVE DAMAGES OR LOST PROFITS, EVEN IF SAMSUNG HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. THIS LIMITATION WILL APPLY REGARDLESS OF THE THEORY OF LIABILITY, WHETHER FRAUD, MISREPRESENTATION, BREACH OF CONTRACT, NEGILIGENCE, PERSONAL INJURY, PRODUCT LIABILITY, INFRINGEMENT OR ANY OTHER THEORY REGARDLESS OF WHETHER OR NOT SAMSUNG HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. THIS LIMITATION AND WAIVER ALSO APPLIES TO ANY CLAIMS YOU MAY BRING AGAINST ANY OTHER PARTY TO THE EXTENT THAT SAMSUNG WOULD BE REQUIRED TO INDEMNIFY THAT PARTY FOR SUCH CLAIM. 
+
+7. PRIVACY 
+Samsung respects your privacy. The Privacy Policy governs how Samsung transfers information provided by you or relate to your use of the Application. Mobile Messenger may provide the Privacy Policy and may update the Privacy Policy from time to time, so please periodically review the Privacy Policy. 
+
+8. GENERAL TERMS
+
+8.1 Choice of Law. This Agreement, including all revisions and amendments thereto, is governed by and construed in accordance with the laws of California, without regard to its conflict or choice of law principles.
+
+8.2 Arbitration. By using the Application, you unconditionally consent and agree that: (i) any claim, dispute or controversy (whether in contract, tort, or otherwise) you may have against any Samsung entity, the officers, directors, agents and employees of any Samsung entity (the “Samsung Entity(ies)”) arising out of, relating to, or connected in any way with the Application or the determination of the scope or applicability of this clause, will be resolved exclusively by final and binding arbitration administered by JAMS and conducted before a sole arbitrator in accordance with the rules of JAMS; (ii) this clause is made pursuant to a transaction involving interstate commerce, and shall be governed by the Federal Arbitration Act (“FAA”), 9 U.S.C. §§ 1-16; (iii) the arbitration shall be held in San Jose, California; (iv) the arbitrator’s decision shall be controlled by the terms and conditions of this Agreement and any other agreements referenced herein that you have agreed to in connection with the Application; (v) the arbitrator shall apply California law consistent with the FAA and applicable statutes of limitations, and shall honor claims of privilege recognized at law; (vi) there shall be no authority for any claims to be arbitrated on a class or representative basis, arbitration can decide only your and/or the applicable Samsung Entity’s individual claims; the arbitrator may not consolidate or join the claims of other persons or parties who may be similarly situated; (vii) the arbitrator shall not have the power to award punitive damages against you or any Samsung Entity; (viii) in the event that the administrative fees and deposits that must be paid to initiate arbitration against any Samsung Entity exceed One Hundred Twenty-Five US Dollars (US$125), and you are unable (or not required under the rules of JAMS) to pay any fees and deposits that exceed this amount, Samsung agrees to pay them and/or forward them on your behalf, subject to ultimate allocation by the arbitrator. In addition, if you are able to demonstrate that the costs of arbitration will be prohibitive as compared to the costs of litigation, Samsung will pay as much of your filing and hearing fees in connection with the arbitration as the arbitrator deems necessary to prevent the arbitration from being cost prohibitive; and (ix) with the exception of subsection (vi) above, if any part of this arbitration provision is deemed invalid, unenforceable or illegal, or otherwise conflicts with the rules of JAMS, the balance of this arbitration provision shall remain in effect and shall be construed in accordance with its terms as if the invalid, unenforceable, illegal or conflicting provision were not contained herein. If, however, subsection (vi) above is found to be invalid, unenforceable or illegal, the entirety of this arbitration provision shall be null and void, and neither you nor Samsung shall be entitled to arbitrate the dispute. For more information on JAMS and/or the rules of JAMS, visit their website at www.jamsadr.com.
+
+8.3 Severability. If any term or provision of this Agreement is held to be void or unenforceable by any judicial or administrative authority, such determination shall not affect the validity of enforceability of the remaining terms and provisions of this Agreement. The remaining provisions of this Agreement shall remain in effect and shall be construed in accordance with its terms. 
+
+8.4 Survival. Sections 1.2, 2, 4, 5, 6 and 8 of this Agreement, and any other provision that by its nature should continue to be in effect, shall survive the expiration or earlier termination of this Agreement, and shall remain valid and binding.
+
+8.5 Headings. The headings contained in this Agreement are for reference purposes only and shall not affect the meaning or interpretation of this Agreement.
+
+8.6 No Waiver. The failure of Samsung to enforce at any time any of the provisions of this Agreement, or the failure by Samsung to require at any time performance by you of any of the provisions of this Agreement, shall in no way be construed to be a present or future waiver of such provisions, nor in any way affect the right of Samsung to enforce such provision thereafter. The express waiver by Samsung of any provision, condition or requirement of this Agreement shall not constitute a waiver of any future obligation to comply with such provision, condition or requirement.

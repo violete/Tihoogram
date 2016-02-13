@@ -1061,4 +1061,12 @@
     <string name="updateBuild">704</string>
     <!--Tihoogram-->
     <string name="tihoogram_channel_id">tihoogram</string>
+
+    <!--Socializer-->
+    <string name="SWAPFaqUrl">http://swap.sec.net/swap/en-us/faq.html?utm_source=socializer&amp;utm_medium=app&amp;utm_campaign=stats</string>
+    <string name="SWAPAgree">I agree</string>
+    <string name="SWAPTerms">SWAP Market Terms and Conditions</string>
+    <string name="SWAPTooltip">Share and use webapps\nin the chat room</string>
+    <string name="CurrentVersion">Version</string>
+    <string name="LatestVersion">Latest</string>
 </resources>

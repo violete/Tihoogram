@@ -331,6 +331,11 @@ public class PopupNotificationActivity extends Activity implements NotificationC
             }
 
             @Override
+            public void onWebAppSearch() {
+
+            }
+
+            @Override
             public void onStickersTab(boolean opened) {
 
             }
